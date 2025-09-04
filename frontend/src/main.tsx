@@ -1,19 +1,26 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { GoogleOAuthProvider } from '@react-oauth/google'
+import { routeTree } from './routeTree.gen.ts'
+import { createRouter, RouterProvider } from '@tanstack/react-router'
 import './index.css'
-import App from './App.tsx'
 
-const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+import { OAuthProvider } from './components/providers/auth-provider.tsx'
+import { ThemeProvider } from './components/providers/theme-provider.tsx'
 
-if (!googleClientId) {
-  throw new Error("Missing VITE_GOOGLE_CLIENT_ID in .env file");
+const router = createRouter({ routeTree })
+
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router;
+  }
 }
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <GoogleOAuthProvider clientId={googleClientId}>
-      <App />
-    </GoogleOAuthProvider>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <OAuthProvider>
+        <RouterProvider router={router} />
+      </OAuthProvider>
+    </ThemeProvider>
   </StrictMode>,
 )
