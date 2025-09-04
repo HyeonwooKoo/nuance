@@ -1,3 +1,8 @@
+import { Check } from "lucide-react";
+import { useState } from "react";
+
+import { cn } from "@/lib/utils";
+
 import {
   Accordion,
   AccordionContent,
@@ -5,9 +10,6 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 import { Button } from "./ui/button";
-import { Check } from "lucide-react";
-import { useState } from "react";
-import { cn } from "@/lib/utils";
 
 type VocaItemProps = {
   word: string;

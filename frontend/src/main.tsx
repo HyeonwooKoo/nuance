@@ -1,11 +1,12 @@
+import './index.css'
+
+import { createRouter, RouterProvider } from '@tanstack/react-router'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { routeTree } from './routeTree.gen.ts'
-import { createRouter, RouterProvider } from '@tanstack/react-router'
-import './index.css'
 
 import { OAuthProvider } from './components/providers/auth-provider.tsx'
 import { ThemeProvider } from './components/providers/theme-provider.tsx'
+import { routeTree } from './routeTree.gen.ts'
 
 const router = createRouter({ routeTree })
 

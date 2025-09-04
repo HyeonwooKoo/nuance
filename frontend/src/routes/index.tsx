@@ -1,7 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { VocaItem } from "../components/voca-item";
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+
+import { VocaItem } from "../components/voca-item";
 import { dummyItems as allVocaItems } from "../dummyItems";
 
 export const Route = createFileRoute('/')({

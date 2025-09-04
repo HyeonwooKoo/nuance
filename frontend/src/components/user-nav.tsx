@@ -1,8 +1,9 @@
 import { useGoogleLogin } from "@react-oauth/google";
-import { Button } from "./ui/button";
 import { LogOut } from "lucide-react";
-import { useAuthStore } from "../store/auth";
+
 import api from "../lib/api";
+import { useAuthStore } from "../store/auth";
+import { Button } from "./ui/button";
 
 export function UserNav() {
   const { user, setUser, logout } = useAuthStore();
