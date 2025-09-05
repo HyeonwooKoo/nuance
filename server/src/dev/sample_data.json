@@ -1,0 +1,405 @@
+{
+    "VocaCreate": [
+        {
+            "word": "apple",
+            "meaning": "A fruit that is usually red, green, or yellow.",
+            "cefr": "A1"
+        },
+        {
+            "word": "banana",
+            "meaning": "A long curved fruit with a yellow skin.",
+            "cefr": "A1"
+        },
+        {
+            "word": "cat",
+            "meaning": "A small domesticated carnivorous mammal.",
+            "cefr": "A1"
+        },
+        {
+            "word": "dog",
+            "meaning": "A domesticated carnivorous mammal.",
+            "cefr": "A1"
+        },
+        {
+            "word": "eat",
+            "meaning": "To put food into your mouth and swallow it.",
+            "cefr": "A1"
+        },
+        {
+            "word": "go",
+            "meaning": "To move or travel from one place to another.",
+            "cefr": "A1"
+        },
+        {
+            "word": "happy",
+            "meaning": "Feeling or showing pleasure or contentment.",
+            "cefr": "A1"
+        },
+        {
+            "word": "jump",
+            "meaning": "To push yourself off the ground and into the air.",
+            "cefr": "A1"
+        },
+        {
+            "word": "kite",
+            "meaning": "A toy flown in the wind at the end of a string.",
+            "cefr": "A1"
+        },
+        {
+            "word": "like",
+            "meaning": "To enjoy or feel attracted to something.",
+            "cefr": "A1"
+        },
+        {
+            "word": "man",
+            "meaning": "An adult male human.",
+            "cefr": "A1"
+        },
+        {
+            "word": "name",
+            "meaning": "A word or set of words by which a person or thing is known.",
+            "cefr": "A1"
+        },
+        {
+            "word": "open",
+            "meaning": "Not closed or fastened.",
+            "cefr": "A1"
+        },
+        {
+            "word": "play",
+            "meaning": "To engage in activity for enjoyment and recreation.",
+            "cefr": "A1"
+        },
+        {
+            "word": "question",
+            "meaning": "A sentence worded or expressed to elicit information.",
+            "cefr": "A1"
+        },
+        {
+            "word": "read",
+            "meaning": "To look at and comprehend the meaning of written matter.",
+            "cefr": "A1"
+        },
+        {
+            "word": "school",
+            "meaning": "A place where people go to learn.",
+            "cefr": "A1"
+        },
+        {
+            "word": "teacher",
+            "meaning": "A person who teaches.",
+            "cefr": "A1"
+        },
+        {
+            "word": "understand",
+            "meaning": "To grasp the meaning or importance of something.",
+            "cefr": "A1"
+        },
+        {
+            "word": "water",
+            "meaning": "A clear liquid necessary for most plant and animal life.",
+            "cefr": "A1"
+        },
+        {
+            "word": "yellow",
+            "meaning": "A color like that of ripe lemons or gold.",
+            "cefr": "A1"
+        },
+        {
+            "word": "zebra",
+            "meaning": "An African wild horse with black-and-white stripes.",
+            "cefr": "A1"
+        },
+        {
+            "word": "walk",
+            "meaning": "To move at a regular pace by lifting and setting down each foot.",
+            "cefr": "A1"
+        },
+        {
+            "word": "run",
+            "meaning": "To move swiftly on foot.",
+            "cefr": "A1"
+        },
+        {
+            "word": "think",
+            "meaning": "To have a particular opinion or belief.",
+            "cefr": "A1"
+        },
+        {
+            "word": "give",
+            "meaning": "To present voluntarily and without expecting return.",
+            "cefr": "A1"
+        },
+        {
+            "word": "take",
+            "meaning": "To get into one's hands or possession.",
+            "cefr": "A1"
+        },
+        {
+            "word": "see",
+            "meaning": "To perceive with the eyes.",
+            "cefr": "A1"
+        },
+        {
+            "word": "look",
+            "meaning": "To direct one's gaze towards someone or something.",
+            "cefr": "A1"
+        },
+        {
+            "word": "make",
+            "meaning": "To create or form something.",
+            "cefr": "A1"
+        },
+        {
+            "word": "love",
+            "meaning": "An intense feeling of deep affection.",
+            "cefr": "A1"
+        }
+    ],
+    "SentenceCreate": [
+        {
+            "text": "I like to eat an apple every day.",
+            "voca": "apple"
+        },
+        {
+            "text": "Bananas are yellow and sweet.",
+            "voca": "banana"
+        },
+        {
+            "text": "The cat is sleeping on the sofa.",
+            "voca": "cat"
+        },
+        {
+            "text": "My dog likes to play in the park.",
+            "voca": "dog"
+        },
+        {
+            "text": "We eat breakfast at 7 am.",
+            "voca": "eat"
+        },
+        {
+            "text": "I go to school by bus.",
+            "voca": "go"
+        },
+        {
+            "text": "She looks very happy today.",
+            "voca": "happy"
+        },
+        {
+            "text": "Children jump high in the playground.",
+            "voca": "jump"
+        },
+        {
+            "text": "The kite flies in the wind.",
+            "voca": "kite"
+        },
+        {
+            "text": "Do you like reading books?",
+            "voca": "like"
+        },
+        {
+            "text": "The man is working at the office.",
+            "voca": "man"
+        },
+        {
+            "text": "What is your name?",
+            "voca": "name"
+        },
+        {
+            "text": "Please open the door.",
+            "voca": "open"
+        },
+        {
+            "text": "They play football every Sunday.",
+            "voca": "play"
+        },
+        {
+            "text": "Can you answer the question?",
+            "voca": "question"
+        },
+        {
+            "text": "I read many books last year.",
+            "voca": "read"
+        },
+        {
+            "text": "School starts at 8 am.",
+            "voca": "school"
+        },
+        {
+            "text": "The teacher is kind and helpful.",
+            "voca": "teacher"
+        },
+        {
+            "text": "I understand the lesson well.",
+            "voca": "understand"
+        },
+        {
+            "text": "Water is essential for life.",
+            "voca": "water"
+        },
+        {
+            "text": "The sunflowers are bright yellow.",
+            "voca": "yellow"
+        },
+        {
+            "text": "Zebras live in Africa.",
+            "voca": "zebra"
+        },
+        {
+            "text": "Let's go for a walk.",
+            "voca": "walk"
+        },
+        {
+            "text": "He can run very fast.",
+            "voca": "run"
+        },
+        {
+            "text": "I think you are right.",
+            "voca": "think"
+        },
+        {
+            "text": "Please give me some water.",
+            "voca": "give"
+        },
+        {
+            "text": "Take your books to the library.",
+            "voca": "take"
+        },
+        {
+            "text": "I see a bird in the tree.",
+            "voca": "see"
+        },
+        {
+            "text": "Look at the beautiful sky.",
+            "voca": "look"
+        },
+        {
+            "text": "She can make a cake.",
+            "voca": "make"
+        },
+        {
+            "text": "Love is important in life.",
+            "voca": "love"
+        },
+        {
+            "text": "I eat an apple every morning.",
+            "voca": "apple"
+        },
+        {
+            "text": "Banana trees grow tall.",
+            "voca": "banana"
+        },
+        {
+            "text": "A cat jumped onto the chair.",
+            "voca": "cat"
+        },
+        {
+            "text": "Dogs bark loudly.",
+            "voca": "dog"
+        },
+        {
+            "text": "We like to eat pizza.",
+            "voca": "eat"
+        },
+        {
+            "text": "He goes to the gym every day.",
+            "voca": "go"
+        },
+        {
+            "text": "She is happy with her new job.",
+            "voca": "happy"
+        },
+        {
+            "text": "The children jump over the fence.",
+            "voca": "jump"
+        },
+        {
+            "text": "The kite is stuck in the tree.",
+            "voca": "kite"
+        },
+        {
+            "text": "I like to swim in the pool.",
+            "voca": "like"
+        },
+        {
+            "text": "The man helped me yesterday.",
+            "voca": "man"
+        },
+        {
+            "text": "What is your full name?",
+            "voca": "name"
+        },
+        {
+            "text": "Open the window, please.",
+            "voca": "open"
+        },
+        {
+            "text": "They play chess every weekend.",
+            "voca": "play"
+        },
+        {
+            "text": "This question is difficult.",
+            "voca": "question"
+        },
+        {
+            "text": "I read a newspaper this morning.",
+            "voca": "read"
+        },
+        {
+            "text": "The school is closed today.",
+            "voca": "school"
+        },
+        {
+            "text": "Our teacher is very strict.",
+            "voca": "teacher"
+        },
+        {
+            "text": "I understand your feelings.",
+            "voca": "understand"
+        },
+        {
+            "text": "Water freezes at zero degrees.",
+            "voca": "water"
+        },
+        {
+            "text": "She wore a yellow dress.",
+            "voca": "yellow"
+        },
+        {
+            "text": "The zebra is running fast.",
+            "voca": "zebra"
+        },
+        {
+            "text": "They walk to school every day.",
+            "voca": "walk"
+        },
+        {
+            "text": "He likes to run every morning.",
+            "voca": "run"
+        },
+        {
+            "text": "I think she is kind.",
+            "voca": "think"
+        },
+        {
+            "text": "Give me a call later.",
+            "voca": "give"
+        },
+        {
+            "text": "Take your time.",
+            "voca": "take"
+        },
+        {
+            "text": "I see the stars at night.",
+            "voca": "see"
+        },
+        {
+            "text": "Look out! There's a car coming.",
+            "voca": "look"
+        },
+        {
+            "text": "Make a wish.",
+            "voca": "make"
+        }
+    ]
+}
