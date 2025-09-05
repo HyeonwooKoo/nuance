@@ -5,8 +5,8 @@ from contextlib import asynccontextmanager
 
 from src.api.v1.api import api_router as api_v1_router
 from src.core.exceptions import GoogleAuthError
-from src.core.db import engine, init_db
-
+from src.core.config import settings
+from src.core.db import init_db
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -15,7 +15,6 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Nuance API", lifespan=lifespan)
 
-# Exception Handlers
 @app.exception_handler(GoogleAuthError)
 async def google_auth_exception_handler(request: Request, exc: GoogleAuthError):
     return JSONResponse(
@@ -23,16 +22,9 @@ async def google_auth_exception_handler(request: Request, exc: GoogleAuthError):
         content={"detail": exc.detail},
     )
 
-# CORS configuration
-origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "http://localhost:3000",
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=settings.all_cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
