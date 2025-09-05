@@ -1,5 +1,5 @@
-from pydantic import BaseModel
+from sqlmodel import SQLModel
 
 
-class AuthCode(BaseModel):
+class AuthCode(SQLModel):
     code: str
