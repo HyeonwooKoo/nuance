@@ -22,11 +22,17 @@ def get_db() -> Generator[Session, None, None]:
 
 
 SessionDep = Annotated[Session, Depends(get_db)]
-reusable_oauth2 = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/google")
-TokenDep = Annotated[str, Depends(reusable_oauth2)]
+reusable_oauth2 = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/google", auto_error=False)
+TokenDep = Annotated[str | None, Depends(reusable_oauth2)]
 
 
 def get_current_user(session: SessionDep, token: TokenDep) -> User:
+    if not token:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Not authenticated",
+        )
+
     try:
         payload = jwt.decode(
             token, settings.JWT_SECRET, algorithms=[security.ALGORITHM]
@@ -43,4 +49,21 @@ def get_current_user(session: SessionDep, token: TokenDep) -> User:
     return user
 
 
+def get_optional_current_user(session: SessionDep, token: TokenDep) -> User | None:
+    if not token:
+        return None
+    
+    try:
+        payload = jwt.decode(
+            token, settings.JWT_SECRET, algorithms=[security.ALGORITHM]
+        )
+        token_data = TokenPayload(**payload)
+    except (jwt.InvalidTokenError, ValidationError):
+        return None
+    
+    user = user_service.get_user_by_gmail(session, gmail=token_data.sub)
+    return user
+
+
 CurrentUser = Annotated[User, Depends(get_current_user)]
+OptionalCurrentUser = Annotated[User | None, Depends(get_optional_current_user)]
