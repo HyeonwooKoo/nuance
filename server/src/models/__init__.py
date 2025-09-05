@@ -1,4 +1,6 @@
-from .associations import Studying, Seen
-from .user import User
-from .voca import Voca, CEFRLevel
-from .sentence import Sentence
+from .associations import *
+from .sentence import *
+from .user import *
+from .voca import *
+
+__all__ = ["Seen", "Studying", "Sentence", "User", "CEFRLevel", "Voca", "SentenceCreate"]
