@@ -1,8 +1,15 @@
+import uuid
 from sqlmodel import Field, SQLModel
 
-class User(SQLModel, table=True):
+class UserBase(SQLModel):
+    gmail: str = Field(unique=True, index=True)
+    name: str
+
+class UserCreate(UserBase):
+    pass
+
+class User(UserBase, table=True):
     __tablename__ = "users"
 
-    email: str = Field(primary_key=True, index=True)
-    name: str
-    picture: str
+    id: str = Field(default_factory=uuid.uuid4, primary_key=True)
+    
