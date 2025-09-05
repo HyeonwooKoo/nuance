@@ -10,7 +10,7 @@ from src.core.db import init_db
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await init_db()
+    init_db()
     yield
 
 app = FastAPI(title="Nuance API", lifespan=lifespan)
