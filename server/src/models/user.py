@@ -1,7 +1,8 @@
-from pydantic import BaseModel
+from sqlmodel import Field, SQLModel
 
+class User(SQLModel, table=True):
+    __tablename__ = "users"
 
-class User(BaseModel):
-    email: str
+    email: str = Field(primary_key=True, index=True)
     name: str
     picture: str
