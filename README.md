@@ -2,4 +2,4 @@
 
 frontend: `yarn dev`
 
-server: `poetry run uvicorn src.main:app --reload`
+server: `uv run uvicorn src.main:app --reload`
