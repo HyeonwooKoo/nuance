@@ -4,6 +4,7 @@ from src.dev.insert_sample_data import insert_sample_data
 
 engine = create_engine(settings.DATABASE_URL)
 
+
 def init_db():
     SQLModel.metadata.drop_all(engine)
     SQLModel.metadata.create_all(engine)

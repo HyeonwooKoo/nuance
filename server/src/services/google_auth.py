@@ -5,6 +5,7 @@ from oauthlib.oauth2 import OAuth2Error
 from src.core.config import settings
 from src.core.exceptions import GoogleAuthError
 
+
 def get_google_user_info(auth_code: str) -> dict:
     try:
         client_config = {

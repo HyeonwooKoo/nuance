@@ -3,4 +3,12 @@ from .sentence import *
 from .user import *
 from .word import *
 
-__all__ = ["ReviewLog", "ReviewStat", "Sentence", "User", "CEFRLevel", "Word", "SentenceCreate"]
+__all__ = [
+    "ReviewLog",
+    "ReviewStat",
+    "Sentence",
+    "User",
+    "CEFRLevel",
+    "Word",
+    "SentenceCreate",
+]

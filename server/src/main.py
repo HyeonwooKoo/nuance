@@ -8,12 +8,15 @@ from src.core.exceptions import GoogleAuthError
 from src.core.config import settings
 from src.core.db import init_db
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
     yield
 
+
 app = FastAPI(title="Nuance API", lifespan=lifespan)
+
 
 @app.exception_handler(GoogleAuthError)
 async def google_auth_exception_handler(request: Request, exc: GoogleAuthError):
@@ -21,6 +24,7 @@ async def google_auth_exception_handler(request: Request, exc: GoogleAuthError):
         status_code=400,
         content={"detail": exc.detail},
     )
+
 
 app.add_middleware(
     CORSMiddleware,

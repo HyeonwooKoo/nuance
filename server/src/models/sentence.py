@@ -1,13 +1,17 @@
 from sqlmodel import SQLModel, Field
 
+
 class SentenceBase(SQLModel):
     text: str
+
 
 class SentenceCreate(SentenceBase):
     term: str
 
+
 class SentencePublic(SentenceBase):
     term: str
+
 
 class Sentence(SentenceBase, table=True):
     __tablename__ = "sentences"

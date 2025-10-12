@@ -7,15 +7,16 @@ from src.models.sentence import Sentence, SentencePublic
 
 router = APIRouter()
 
+
 @router.get("/random")
-def get_random_sentences(session: SessionDep, user: OptionalCurrentUser) -> list[SentencePublic]:
+def get_random_sentences(
+    session: SessionDep, user: OptionalCurrentUser
+) -> list[SentencePublic]:
     if user:
         return []
 
-    random_vocas = session.exec(
-        select(Voca).order_by(func.random()).limit(20)
-    ).all()
-    
+    random_vocas = session.exec(select(Voca).order_by(func.random()).limit(20)).all()
+
     sentences = []
     for voca in random_vocas:
         random_sentence = session.exec(
@@ -24,7 +25,7 @@ def get_random_sentences(session: SessionDep, user: OptionalCurrentUser) -> list
             .order_by(func.random())
             .limit(1)
         ).first()
-        
+
         sentences.append(random_sentence)
-    
+
     return [SentencePublic(text=s.text, voca=s.voca.word) for s in sentences]

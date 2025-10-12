@@ -1,4 +1,3 @@
-
 from collections.abc import Generator
 from typing import Annotated
 
@@ -52,7 +51,7 @@ def get_current_user(session: SessionDep, token: TokenDep) -> User:
 def get_optional_current_user(session: SessionDep, token: TokenDep) -> User | None:
     if not token:
         return None
-    
+
     try:
         payload = jwt.decode(
             token, settings.JWT_SECRET, algorithms=[security.ALGORITHM]
@@ -60,7 +59,7 @@ def get_optional_current_user(session: SessionDep, token: TokenDep) -> User | No
         token_data = TokenPayload(**payload)
     except (jwt.InvalidTokenError, ValidationError):
         return None
-    
+
     user = user_service.get_user_by_gmail(session, gmail=token_data.sub)
     return user
 

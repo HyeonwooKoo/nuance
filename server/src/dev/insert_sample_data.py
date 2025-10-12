@@ -4,10 +4,12 @@ from src.models import VocaCreate, SentenceCreate
 from src.services.voca import create_voca
 from src.services.sentence import create_sentence
 
+
 def get_sample_data():
     with open("src/dev/sample_data.json", "r") as f:
         sample_json = f.read()
         return json.loads(sample_json)
+
 
 def insert_sample_data(session: Session):
     data = get_sample_data()
