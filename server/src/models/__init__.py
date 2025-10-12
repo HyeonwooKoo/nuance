@@ -1,6 +1,6 @@
 from .associations import *
 from .sentence import *
 from .user import *
-from .voca import *
+from .word import *
 
-__all__ = ["Seen", "Studying", "Sentence", "User", "CEFRLevel", "Voca", "SentenceCreate"]
+__all__ = ["ReviewLog", "ReviewStat", "Sentence", "User", "CEFRLevel", "Word", "SentenceCreate"]

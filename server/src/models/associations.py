@@ -2,14 +2,14 @@ import uuid
 from sqlmodel import Field, SQLModel
 
 
-class Studying(SQLModel, table=True):
-    __tablename__ = "studying"
+class ReviewStat(SQLModel, table=True):
+    __tablename__ = "review_stats"
     
     user_id: uuid.UUID = Field(foreign_key="users.id", primary_key=True)
-    voca_id: int = Field(foreign_key="vocas.id", primary_key=True)
+    word_id: int = Field(foreign_key="words.id", primary_key=True)
 
-class Seen(SQLModel, table=True):
-    __tablename__ = "seen"
+class ReviewLog(SQLModel, table=True):
+    __tablename__ = "review_logs"
     
     user_id: uuid.UUID = Field(foreign_key="users.id", primary_key=True)
     sentence_id: int = Field(foreign_key="sentences.id", primary_key=True)
