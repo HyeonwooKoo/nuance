@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 import { Button } from "./ui/button";
+import { UnderlinedSpan } from "./underlined-span";
 
 type VocaItemProps = {
   word: string;
@@ -20,11 +21,6 @@ type VocaItemProps = {
 export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
   const [state, setState] = useState<"idle" | "descripted" | "checked">(
     "idle"
-  );
-
-  const trigger = sentence.replace(
-    word,
-    `<span class="underline">${word}</span>`
   );
 
   const handleAccordionChange = (value: string) => {
@@ -60,7 +56,7 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
       >
         <AccordionItem value="item-1">
           <AccordionTrigger>
-            <div dangerouslySetInnerHTML={{ __html: trigger }} />
+            <UnderlinedSpan sentence={sentence} word={word} />
           </AccordionTrigger>
           <AccordionContent className="ml-6">{meaning}</AccordionContent>
         </AccordionItem>
