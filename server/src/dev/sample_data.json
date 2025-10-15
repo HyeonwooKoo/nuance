@@ -1,405 +1,405 @@
 {
-    "VocaCreate": [
+    "WordCreate": [
         {
-            "word": "apple",
-            "meaning": "A fruit that is usually red, green, or yellow.",
+            "term": "apple",
+            "definition": "A fruit that is usually red, green, or yellow.",
             "cefr": "A1"
         },
         {
-            "word": "banana",
-            "meaning": "A long curved fruit with a yellow skin.",
+            "term": "banana",
+            "definition": "A long curved fruit with a yellow skin.",
             "cefr": "A1"
         },
         {
-            "word": "cat",
-            "meaning": "A small domesticated carnivorous mammal.",
+            "term": "cat",
+            "definition": "A small domesticated carnivorous mammal.",
             "cefr": "A1"
         },
         {
-            "word": "dog",
-            "meaning": "A domesticated carnivorous mammal.",
+            "term": "dog",
+            "definition": "A domesticated carnivorous mammal.",
             "cefr": "A1"
         },
         {
-            "word": "eat",
-            "meaning": "To put food into your mouth and swallow it.",
+            "term": "eat",
+            "definition": "To put food into your mouth and swallow it.",
             "cefr": "A1"
         },
         {
-            "word": "go",
-            "meaning": "To move or travel from one place to another.",
+            "term": "go",
+            "definition": "To move or travel from one place to another.",
             "cefr": "A1"
         },
         {
-            "word": "happy",
-            "meaning": "Feeling or showing pleasure or contentment.",
+            "term": "happy",
+            "definition": "Feeling or showing pleasure or contentment.",
             "cefr": "A1"
         },
         {
-            "word": "jump",
-            "meaning": "To push yourself off the ground and into the air.",
+            "term": "jump",
+            "definition": "To push yourself off the ground and into the air.",
             "cefr": "A1"
         },
         {
-            "word": "kite",
-            "meaning": "A toy flown in the wind at the end of a string.",
+            "term": "kite",
+            "definition": "A toy flown in the wind at the end of a string.",
             "cefr": "A1"
         },
         {
-            "word": "like",
-            "meaning": "To enjoy or feel attracted to something.",
+            "term": "like",
+            "definition": "To enjoy or feel attracted to something.",
             "cefr": "A1"
         },
         {
-            "word": "man",
-            "meaning": "An adult male human.",
+            "term": "man",
+            "definition": "An adult male human.",
             "cefr": "A1"
         },
         {
-            "word": "name",
-            "meaning": "A word or set of words by which a person or thing is known.",
+            "term": "name",
+            "definition": "A term or set of terms by which a person or thing is known.",
             "cefr": "A1"
         },
         {
-            "word": "open",
-            "meaning": "Not closed or fastened.",
+            "term": "open",
+            "definition": "Not closed or fastened.",
             "cefr": "A1"
         },
         {
-            "word": "play",
-            "meaning": "To engage in activity for enjoyment and recreation.",
+            "term": "play",
+            "definition": "To engage in activity for enjoyment and recreation.",
             "cefr": "A1"
         },
         {
-            "word": "question",
-            "meaning": "A sentence worded or expressed to elicit information.",
+            "term": "question",
+            "definition": "A sentence termed or expressed to elicit information.",
             "cefr": "A1"
         },
         {
-            "word": "read",
-            "meaning": "To look at and comprehend the meaning of written matter.",
+            "term": "read",
+            "definition": "To look at and comprehend the definition of written matter.",
             "cefr": "A1"
         },
         {
-            "word": "school",
-            "meaning": "A place where people go to learn.",
+            "term": "school",
+            "definition": "A place where people go to learn.",
             "cefr": "A1"
         },
         {
-            "word": "teacher",
-            "meaning": "A person who teaches.",
+            "term": "teacher",
+            "definition": "A person who teaches.",
             "cefr": "A1"
         },
         {
-            "word": "understand",
-            "meaning": "To grasp the meaning or importance of something.",
+            "term": "understand",
+            "definition": "To grasp the definition or importance of something.",
             "cefr": "A1"
         },
         {
-            "word": "water",
-            "meaning": "A clear liquid necessary for most plant and animal life.",
+            "term": "water",
+            "definition": "A clear liquid necessary for most plant and animal life.",
             "cefr": "A1"
         },
         {
-            "word": "yellow",
-            "meaning": "A color like that of ripe lemons or gold.",
+            "term": "yellow",
+            "definition": "A color like that of ripe lemons or gold.",
             "cefr": "A1"
         },
         {
-            "word": "zebra",
-            "meaning": "An African wild horse with black-and-white stripes.",
+            "term": "zebra",
+            "definition": "An African wild horse with black-and-white stripes.",
             "cefr": "A1"
         },
         {
-            "word": "walk",
-            "meaning": "To move at a regular pace by lifting and setting down each foot.",
+            "term": "walk",
+            "definition": "To move at a regular pace by lifting and setting down each foot.",
             "cefr": "A1"
         },
         {
-            "word": "run",
-            "meaning": "To move swiftly on foot.",
+            "term": "run",
+            "definition": "To move swiftly on foot.",
             "cefr": "A1"
         },
         {
-            "word": "think",
-            "meaning": "To have a particular opinion or belief.",
+            "term": "think",
+            "definition": "To have a particular opinion or belief.",
             "cefr": "A1"
         },
         {
-            "word": "give",
-            "meaning": "To present voluntarily and without expecting return.",
+            "term": "give",
+            "definition": "To present voluntarily and without expecting return.",
             "cefr": "A1"
         },
         {
-            "word": "take",
-            "meaning": "To get into one's hands or possession.",
+            "term": "take",
+            "definition": "To get into one's hands or possession.",
             "cefr": "A1"
         },
         {
-            "word": "see",
-            "meaning": "To perceive with the eyes.",
+            "term": "see",
+            "definition": "To perceive with the eyes.",
             "cefr": "A1"
         },
         {
-            "word": "look",
-            "meaning": "To direct one's gaze towards someone or something.",
+            "term": "look",
+            "definition": "To direct one's gaze towards someone or something.",
             "cefr": "A1"
         },
         {
-            "word": "make",
-            "meaning": "To create or form something.",
+            "term": "make",
+            "definition": "To create or form something.",
             "cefr": "A1"
         },
         {
-            "word": "love",
-            "meaning": "An intense feeling of deep affection.",
+            "term": "love",
+            "definition": "An intense feeling of deep affection.",
             "cefr": "A1"
         }
     ],
     "SentenceCreate": [
         {
             "text": "I like to eat an apple every day.",
-            "voca": "apple"
+            "term": "apple"
         },
         {
             "text": "Bananas are yellow and sweet.",
-            "voca": "banana"
+            "term": "banana"
         },
         {
             "text": "The cat is sleeping on the sofa.",
-            "voca": "cat"
+            "term": "cat"
         },
         {
             "text": "My dog likes to play in the park.",
-            "voca": "dog"
+            "term": "dog"
         },
         {
             "text": "We eat breakfast at 7 am.",
-            "voca": "eat"
+            "term": "eat"
         },
         {
             "text": "I go to school by bus.",
-            "voca": "go"
+            "term": "go"
         },
         {
             "text": "She looks very happy today.",
-            "voca": "happy"
+            "term": "happy"
         },
         {
             "text": "Children jump high in the playground.",
-            "voca": "jump"
+            "term": "jump"
         },
         {
             "text": "The kite flies in the wind.",
-            "voca": "kite"
+            "term": "kite"
         },
         {
             "text": "Do you like reading books?",
-            "voca": "like"
+            "term": "like"
         },
         {
             "text": "The man is working at the office.",
-            "voca": "man"
+            "term": "man"
         },
         {
             "text": "What is your name?",
-            "voca": "name"
+            "term": "name"
         },
         {
             "text": "Please open the door.",
-            "voca": "open"
+            "term": "open"
         },
         {
             "text": "They play football every Sunday.",
-            "voca": "play"
+            "term": "play"
         },
         {
             "text": "Can you answer the question?",
-            "voca": "question"
+            "term": "question"
         },
         {
             "text": "I read many books last year.",
-            "voca": "read"
+            "term": "read"
         },
         {
             "text": "School starts at 8 am.",
-            "voca": "school"
+            "term": "school"
         },
         {
             "text": "The teacher is kind and helpful.",
-            "voca": "teacher"
+            "term": "teacher"
         },
         {
             "text": "I understand the lesson well.",
-            "voca": "understand"
+            "term": "understand"
         },
         {
             "text": "Water is essential for life.",
-            "voca": "water"
+            "term": "water"
         },
         {
             "text": "The sunflowers are bright yellow.",
-            "voca": "yellow"
+            "term": "yellow"
         },
         {
             "text": "Zebras live in Africa.",
-            "voca": "zebra"
+            "term": "zebra"
         },
         {
             "text": "Let's go for a walk.",
-            "voca": "walk"
+            "term": "walk"
         },
         {
             "text": "He can run very fast.",
-            "voca": "run"
+            "term": "run"
         },
         {
             "text": "I think you are right.",
-            "voca": "think"
+            "term": "think"
         },
         {
             "text": "Please give me some water.",
-            "voca": "give"
+            "term": "give"
         },
         {
             "text": "Take your books to the library.",
-            "voca": "take"
+            "term": "take"
         },
         {
             "text": "I see a bird in the tree.",
-            "voca": "see"
+            "term": "see"
         },
         {
             "text": "Look at the beautiful sky.",
-            "voca": "look"
+            "term": "look"
         },
         {
             "text": "She can make a cake.",
-            "voca": "make"
+            "term": "make"
         },
         {
             "text": "Love is important in life.",
-            "voca": "love"
+            "term": "love"
         },
         {
             "text": "I eat an apple every morning.",
-            "voca": "apple"
+            "term": "apple"
         },
         {
             "text": "Banana trees grow tall.",
-            "voca": "banana"
+            "term": "banana"
         },
         {
             "text": "A cat jumped onto the chair.",
-            "voca": "cat"
+            "term": "cat"
         },
         {
             "text": "Dogs bark loudly.",
-            "voca": "dog"
+            "term": "dog"
         },
         {
             "text": "We like to eat pizza.",
-            "voca": "eat"
+            "term": "eat"
         },
         {
             "text": "He goes to the gym every day.",
-            "voca": "go"
+            "term": "go"
         },
         {
             "text": "She is happy with her new job.",
-            "voca": "happy"
+            "term": "happy"
         },
         {
             "text": "The children jump over the fence.",
-            "voca": "jump"
+            "term": "jump"
         },
         {
             "text": "The kite is stuck in the tree.",
-            "voca": "kite"
+            "term": "kite"
         },
         {
             "text": "I like to swim in the pool.",
-            "voca": "like"
+            "term": "like"
         },
         {
             "text": "The man helped me yesterday.",
-            "voca": "man"
+            "term": "man"
         },
         {
             "text": "What is your full name?",
-            "voca": "name"
+            "term": "name"
         },
         {
             "text": "Open the window, please.",
-            "voca": "open"
+            "term": "open"
         },
         {
             "text": "They play chess every weekend.",
-            "voca": "play"
+            "term": "play"
         },
         {
             "text": "This question is difficult.",
-            "voca": "question"
+            "term": "question"
         },
         {
             "text": "I read a newspaper this morning.",
-            "voca": "read"
+            "term": "read"
         },
         {
             "text": "The school is closed today.",
-            "voca": "school"
+            "term": "school"
         },
         {
             "text": "Our teacher is very strict.",
-            "voca": "teacher"
+            "term": "teacher"
         },
         {
             "text": "I understand your feelings.",
-            "voca": "understand"
+            "term": "understand"
         },
         {
             "text": "Water freezes at zero degrees.",
-            "voca": "water"
+            "term": "water"
         },
         {
             "text": "She wore a yellow dress.",
-            "voca": "yellow"
+            "term": "yellow"
         },
         {
             "text": "The zebra is running fast.",
-            "voca": "zebra"
+            "term": "zebra"
         },
         {
             "text": "They walk to school every day.",
-            "voca": "walk"
+            "term": "walk"
         },
         {
             "text": "He likes to run every morning.",
-            "voca": "run"
+            "term": "run"
         },
         {
             "text": "I think she is kind.",
-            "voca": "think"
+            "term": "think"
         },
         {
             "text": "Give me a call later.",
-            "voca": "give"
+            "term": "give"
         },
         {
             "text": "Take your time.",
-            "voca": "take"
+            "term": "take"
         },
         {
             "text": "I see the stars at night.",
-            "voca": "see"
+            "term": "see"
         },
         {
             "text": "Look out! There's a car coming.",
-            "voca": "look"
+            "term": "look"
         },
         {
             "text": "Make a wish.",
-            "voca": "make"
+            "term": "make"
         }
     ]
 }

@@ -1,4 +1,4 @@
-from sqlmodel import Field, SQLModel
+from sqlmodel import Field, SQLModel, Relationship
 import enum
 
 
@@ -25,3 +25,5 @@ class Word(WordBase, table=True):
     __tablename__ = "words"
 
     id: int | None = Field(default=None, primary_key=True)
+
+    sentences: list["Sentence"] = Relationship(back_populates="word")

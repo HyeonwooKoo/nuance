@@ -1,7 +1,7 @@
 import json
 from sqlmodel import Session
-from src.models import VocaCreate, SentenceCreate
-from src.services.voca import create_voca
+from src.models import WordCreate, SentenceCreate
+from src.services.word import create_word
 from src.services.sentence import create_sentence
 
 
@@ -13,11 +13,11 @@ def get_sample_data():
 
 def insert_sample_data(session: Session):
     data = get_sample_data()
-    voca_creates = data["VocaCreate"]
+    word_creates = data["WordCreate"]
     sentence_creates = data["SentenceCreate"]
 
-    for voca_data in voca_creates:
-        create_voca(session, voca_in=VocaCreate(**voca_data))
+    for word_data in word_creates:
+        create_word(session, word_in=WordCreate(**word_data))
 
     for sentence_data in sentence_creates:
         create_sentence(session, sentence_in=SentenceCreate(**sentence_data))
