@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Bird, Check, Lightbulb } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -41,7 +41,7 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
   };
 
   return (
-    <div className={cn("mb-6", state === "checked" && "opacity-50")}>
+    <div className={cn("my-10", state === "checked" && "opacity-50")}>
       <div className="flex items-center gap-4">
         <UnderlinedSpan sentence={sentence} word={word} />
         <Button
@@ -63,7 +63,22 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
       >
         <AccordionItem value="item-1">
           <AccordionTrigger>{word}?</AccordionTrigger>
-          <AccordionContent className="ml-6">{meaning}</AccordionContent>
+          <AccordionContent className="ml-6">
+            <div>{meaning}</div>
+
+            <div className="flex mt-2 gap-3">
+              <Button variant="ghost" size="sm">
+                <Check /> As expected
+              </Button>
+              <Button variant="ghost" size="sm">
+                <Lightbulb /> Aha
+              </Button>
+              <Button variant="ghost" size="sm">
+                <Bird /> ..?
+              </Button>
+            </div>
+            
+          </AccordionContent>
         </AccordionItem>
       </Accordion>
     </div>
