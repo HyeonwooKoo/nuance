@@ -41,12 +41,19 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
   };
 
   return (
-    <div
-      className={cn(
-        "flex items-center gap-4",
-        state === "checked" && "filter grayscale"
-      )}
-    >
+    <div className={cn("mb-6", state === "checked" && "opacity-50")}>
+      <div className="flex items-center gap-4">
+        <UnderlinedSpan sentence={sentence} word={word} />
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={handleCheck}
+          className={cn(state === "descripted" && "invisible")}
+        >
+          <Check className="h-6 w-6" />
+        </Button>
+      </div>
+
       <Accordion
         type="single"
         collapsible
@@ -55,26 +62,10 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
         disabled={state === "checked"}
       >
         <AccordionItem value="item-1">
-          <AccordionTrigger>
-            <UnderlinedSpan sentence={sentence} word={word} />
-          </AccordionTrigger>
+          <AccordionTrigger>{word}?</AccordionTrigger>
           <AccordionContent className="ml-6">{meaning}</AccordionContent>
         </AccordionItem>
       </Accordion>
-      
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleCheck}
-          className={cn(state === "descripted" && "invisible")}
-        >
-          <Check
-            className={cn(
-              "h-6 w-6",
-              state === "checked" && "text-green-500"
-            )}
-          />
-        </Button>
     </div>
   );
 }
