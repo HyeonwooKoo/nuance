@@ -64,7 +64,7 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
         <AccordionItem value="item-1">
           <AccordionTrigger>{word}?</AccordionTrigger>
           <AccordionContent className="ml-6">
-            <div>{meaning}</div>
+            <div className="pr-8">{meaning}</div>
 
             <div className="flex mt-2 gap-3">
               <Button variant="ghost" size="sm">
