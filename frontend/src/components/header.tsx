@@ -9,6 +9,8 @@ import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 import { UserNav } from "./user-nav";
 
+const DEV_MODE = import.meta.env.VITE_DEV_MODE;
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -27,6 +29,10 @@ export function Header() {
     setIsMenuOpen(false);
   };
 
+  const test = () => {
+    console.log("Test button clicked");
+  }
+
   return (
     <>
       <header className="sticky top-0 z-50 flex items-center justify-between bg-background p-4">
@@ -41,6 +47,8 @@ export function Header() {
           <Link to="/" onClick={handleLinkClick}>
             <h1 className="text-xl font-bold">Nuance</h1>
           </Link>
+
+          {DEV_MODE && <Button variant="outline" size="sm" onClick={test}>Test</Button>}
 
           <nav className="hidden md:flex items-center gap-8 ml-10">
             <Link to="/upload" className="text-sm font-medium hover:underline">Upload</Link>
