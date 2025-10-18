@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
+import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
 import { Button } from "./ui/button";
 import { UnderlinedSpan } from "./underlined-span";
 
@@ -66,17 +67,17 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
           <AccordionContent className="ml-6">
             <div className="pr-8">{meaning}</div>
 
-            <div className="flex mt-2 gap-3">
-              <Button variant="ghost" size="sm">
-                <Check /> As expected
-              </Button>
-              <Button variant="ghost" size="sm">
-                <Lightbulb /> Aha
-              </Button>
-              <Button variant="ghost" size="sm">
-                <Bird /> ..?
-              </Button>
-            </div>
+          <ToggleGroup type="single" size="lg" className="mt-2 ml-auto">
+            <ToggleGroupItem value="expected">
+              <Check />
+            </ToggleGroupItem>
+            <ToggleGroupItem value="aha">
+              <Lightbulb />
+            </ToggleGroupItem>
+            <ToggleGroupItem value="bird">
+              <Bird />
+            </ToggleGroupItem>
+          </ToggleGroup>
             
           </AccordionContent>
         </AccordionItem>
