@@ -22,25 +22,18 @@ type VocaItemProps = {
 };
 
 export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
-  const [state, setState] = useState<"idle" | "descripted" | "checked">(
+  const [state, setState] = useState<"idle" | "descripted" | "easy">(
     "idle"
   );
+  const isEasy = state === "easy";
+  const isDescripted = state === "descripted";
 
-  const handleAccordionChange = (value: string) => {
-    if (state === "checked") return;
-    if (value) {
-      setState("descripted");
-    } else {
-      setState("idle");
-    }
+  const handleEasyToggle = () => {
+    setState((prev) => (prev === "easy" ? "idle" : "easy"));
   };
 
-  const handleCheck = () => {
-    if (state === "checked") {
-      setState("idle");
-    } else {
-      setState("checked");
-    }
+  const handleAccordionChange = (value: string) => {
+    setState(value ? "descripted" : "idle");
   };
 
   return (
@@ -49,8 +42,8 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
         <UnderlinedSpan sentence={sentence} word={word} />
         <Toggle
           size="lg"
-          onClick={handleCheck}
-          className={cn(state === "descripted" && "invisible")}
+          onClick={handleEasyToggle}
+          className={cn(isDescripted && "invisible")}
         >
           <Check className="h-6 w-6" />
         </Toggle>
@@ -61,21 +54,21 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
         collapsible
         className="flex-1"
         onValueChange={handleAccordionChange}
-        disabled={state === "checked"}
+        disabled={isEasy}
       >
-        <AccordionItem value="item-1">
+        <AccordionItem value="description">
           <AccordionTrigger>{word}?</AccordionTrigger>
           <AccordionContent className="ml-6">
             <div className="pr-8">{meaning}</div>
 
           <ToggleGroup type="single" size="lg" className="mt-2 ml-auto">
-            <ToggleGroupItem value="expected">
+            <ToggleGroupItem value="good">
               <Check />
             </ToggleGroupItem>
-            <ToggleGroupItem value="aha">
+            <ToggleGroupItem value="hard">
               <Lightbulb />
             </ToggleGroupItem>
-            <ToggleGroupItem value="bird">
+            <ToggleGroupItem value="again">
               <Bird />
             </ToggleGroupItem>
           </ToggleGroup>
