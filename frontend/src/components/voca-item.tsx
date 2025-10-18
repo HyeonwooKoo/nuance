@@ -12,7 +12,7 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
-import { Button } from "./ui/button";
+import { Toggle } from "./ui/toggle";
 import { UnderlinedSpan } from "./underlined-span";
 
 type VocaItemProps = {
@@ -44,21 +44,16 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
   };
 
   return (
-    <motion.div 
-      layout 
-      className="my-10"
-      animate={{ opacity: state === "checked" ? 0.5 : 1 }}
-    >
+    <motion.div layout className="my-10">
       <div className="flex items-center gap-4">
         <UnderlinedSpan sentence={sentence} word={word} />
-        <Button
-          variant="ghost"
-          size="icon"
+        <Toggle
+          size="lg"
           onClick={handleCheck}
           className={cn(state === "descripted" && "invisible")}
         >
           <Check className="h-6 w-6" />
-        </Button>
+        </Toggle>
       </div>
 
       <Accordion
