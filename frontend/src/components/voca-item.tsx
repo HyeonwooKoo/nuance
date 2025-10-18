@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { Bird, Check, Lightbulb } from "lucide-react";
 import { useState } from "react";
 
@@ -42,7 +44,11 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
   };
 
   return (
-    <div className={cn("my-10", state === "checked" && "opacity-50")}>
+    <motion.div 
+      layout 
+      className="my-10"
+      animate={{ opacity: state === "checked" ? 0.5 : 1 }}
+    >
       <div className="flex items-center gap-4">
         <UnderlinedSpan sentence={sentence} word={word} />
         <Button
@@ -82,6 +88,6 @@ export function VocaItem({ word, sentence, meaning }: VocaItemProps) {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </div>
+    </motion.div>
   );
 }
