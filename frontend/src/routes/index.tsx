@@ -40,7 +40,7 @@ function Index() {
       >
         {items.map((item) => (
           <VocaItem
-            key={item.word}
+            key={item.sentence}
             word={item.word}
             sentence={item.sentence}
             meaning={item.meaning}
