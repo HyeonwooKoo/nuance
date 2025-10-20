@@ -1,405 +1,171 @@
 {
-    "WordCreate": [
-        {
-            "term": "apple",
-            "definition": "A fruit that is usually red, green, or yellow.",
-            "cefr": "A1"
-        },
-        {
-            "term": "banana",
-            "definition": "A long curved fruit with a yellow skin.",
-            "cefr": "A1"
-        },
-        {
-            "term": "cat",
-            "definition": "A small domesticated carnivorous mammal.",
-            "cefr": "A1"
-        },
-        {
-            "term": "dog",
-            "definition": "A domesticated carnivorous mammal.",
-            "cefr": "A1"
-        },
-        {
-            "term": "eat",
-            "definition": "To put food into your mouth and swallow it.",
-            "cefr": "A1"
-        },
-        {
-            "term": "go",
-            "definition": "To move or travel from one place to another.",
-            "cefr": "A1"
-        },
-        {
-            "term": "happy",
-            "definition": "Feeling or showing pleasure or contentment.",
-            "cefr": "A1"
-        },
-        {
-            "term": "jump",
-            "definition": "To push yourself off the ground and into the air.",
-            "cefr": "A1"
-        },
-        {
-            "term": "kite",
-            "definition": "A toy flown in the wind at the end of a string.",
-            "cefr": "A1"
-        },
-        {
-            "term": "like",
-            "definition": "To enjoy or feel attracted to something.",
-            "cefr": "A1"
-        },
-        {
-            "term": "man",
-            "definition": "An adult male human.",
-            "cefr": "A1"
-        },
-        {
-            "term": "name",
-            "definition": "A term or set of terms by which a person or thing is known.",
-            "cefr": "A1"
-        },
-        {
-            "term": "open",
-            "definition": "Not closed or fastened.",
-            "cefr": "A1"
-        },
-        {
-            "term": "play",
-            "definition": "To engage in activity for enjoyment and recreation.",
-            "cefr": "A1"
-        },
-        {
-            "term": "question",
-            "definition": "A sentence termed or expressed to elicit information.",
-            "cefr": "A1"
-        },
-        {
-            "term": "read",
-            "definition": "To look at and comprehend the definition of written matter.",
-            "cefr": "A1"
-        },
-        {
-            "term": "school",
-            "definition": "A place where people go to learn.",
-            "cefr": "A1"
-        },
-        {
-            "term": "teacher",
-            "definition": "A person who teaches.",
-            "cefr": "A1"
-        },
-        {
-            "term": "understand",
-            "definition": "To grasp the definition or importance of something.",
-            "cefr": "A1"
-        },
-        {
-            "term": "water",
-            "definition": "A clear liquid necessary for most plant and animal life.",
-            "cefr": "A1"
-        },
-        {
-            "term": "yellow",
-            "definition": "A color like that of ripe lemons or gold.",
-            "cefr": "A1"
-        },
-        {
-            "term": "zebra",
-            "definition": "An African wild horse with black-and-white stripes.",
-            "cefr": "A1"
-        },
-        {
-            "term": "walk",
-            "definition": "To move at a regular pace by lifting and setting down each foot.",
-            "cefr": "A1"
-        },
-        {
-            "term": "run",
-            "definition": "To move swiftly on foot.",
-            "cefr": "A1"
-        },
-        {
-            "term": "think",
-            "definition": "To have a particular opinion or belief.",
-            "cefr": "A1"
-        },
-        {
-            "term": "give",
-            "definition": "To present voluntarily and without expecting return.",
-            "cefr": "A1"
-        },
-        {
-            "term": "take",
-            "definition": "To get into one's hands or possession.",
-            "cefr": "A1"
-        },
-        {
-            "term": "see",
-            "definition": "To perceive with the eyes.",
-            "cefr": "A1"
-        },
-        {
-            "term": "look",
-            "definition": "To direct one's gaze towards someone or something.",
-            "cefr": "A1"
-        },
-        {
-            "term": "make",
-            "definition": "To create or form something.",
-            "cefr": "A1"
-        },
-        {
-            "term": "love",
-            "definition": "An intense feeling of deep affection.",
-            "cefr": "A1"
-        }
-    ],
-    "SentenceCreate": [
-        {
-            "text": "I like to eat an apple every day.",
-            "term": "apple"
-        },
-        {
-            "text": "Bananas are yellow and sweet.",
-            "term": "banana"
-        },
-        {
-            "text": "The cat is sleeping on the sofa.",
-            "term": "cat"
-        },
-        {
-            "text": "My dog likes to play in the park.",
-            "term": "dog"
-        },
-        {
-            "text": "We eat breakfast at 7 am.",
-            "term": "eat"
-        },
-        {
-            "text": "I go to school by bus.",
-            "term": "go"
-        },
-        {
-            "text": "She looks very happy today.",
-            "term": "happy"
-        },
-        {
-            "text": "Children jump high in the playground.",
-            "term": "jump"
-        },
-        {
-            "text": "The kite flies in the wind.",
-            "term": "kite"
-        },
-        {
-            "text": "Do you like reading books?",
-            "term": "like"
-        },
-        {
-            "text": "The man is working at the office.",
-            "term": "man"
-        },
-        {
-            "text": "What is your name?",
-            "term": "name"
-        },
-        {
-            "text": "Please open the door.",
-            "term": "open"
-        },
-        {
-            "text": "They play football every Sunday.",
-            "term": "play"
-        },
-        {
-            "text": "Can you answer the question?",
-            "term": "question"
-        },
-        {
-            "text": "I read many books last year.",
-            "term": "read"
-        },
-        {
-            "text": "School starts at 8 am.",
-            "term": "school"
-        },
-        {
-            "text": "The teacher is kind and helpful.",
-            "term": "teacher"
-        },
-        {
-            "text": "I understand the lesson well.",
-            "term": "understand"
-        },
-        {
-            "text": "Water is essential for life.",
-            "term": "water"
-        },
-        {
-            "text": "The sunflowers are bright yellow.",
-            "term": "yellow"
-        },
-        {
-            "text": "Zebras live in Africa.",
-            "term": "zebra"
-        },
-        {
-            "text": "Let's go for a walk.",
-            "term": "walk"
-        },
-        {
-            "text": "He can run very fast.",
-            "term": "run"
-        },
-        {
-            "text": "I think you are right.",
-            "term": "think"
-        },
-        {
-            "text": "Please give me some water.",
-            "term": "give"
-        },
-        {
-            "text": "Take your books to the library.",
-            "term": "take"
-        },
-        {
-            "text": "I see a bird in the tree.",
-            "term": "see"
-        },
-        {
-            "text": "Look at the beautiful sky.",
-            "term": "look"
-        },
-        {
-            "text": "She can make a cake.",
-            "term": "make"
-        },
-        {
-            "text": "Love is important in life.",
-            "term": "love"
-        },
-        {
-            "text": "I eat an apple every morning.",
-            "term": "apple"
-        },
-        {
-            "text": "Banana trees grow tall.",
-            "term": "banana"
-        },
-        {
-            "text": "A cat jumped onto the chair.",
-            "term": "cat"
-        },
-        {
-            "text": "Dogs bark loudly.",
-            "term": "dog"
-        },
-        {
-            "text": "We like to eat pizza.",
-            "term": "eat"
-        },
-        {
-            "text": "He goes to the gym every day.",
-            "term": "go"
-        },
-        {
-            "text": "She is happy with her new job.",
-            "term": "happy"
-        },
-        {
-            "text": "The children jump over the fence.",
-            "term": "jump"
-        },
-        {
-            "text": "The kite is stuck in the tree.",
-            "term": "kite"
-        },
-        {
-            "text": "I like to swim in the pool.",
-            "term": "like"
-        },
-        {
-            "text": "The man helped me yesterday.",
-            "term": "man"
-        },
-        {
-            "text": "What is your full name?",
-            "term": "name"
-        },
-        {
-            "text": "Open the window, please.",
-            "term": "open"
-        },
-        {
-            "text": "They play chess every weekend.",
-            "term": "play"
-        },
-        {
-            "text": "This question is difficult.",
-            "term": "question"
-        },
-        {
-            "text": "I read a newspaper this morning.",
-            "term": "read"
-        },
-        {
-            "text": "The school is closed today.",
-            "term": "school"
-        },
-        {
-            "text": "Our teacher is very strict.",
-            "term": "teacher"
-        },
-        {
-            "text": "I understand your feelings.",
-            "term": "understand"
-        },
-        {
-            "text": "Water freezes at zero degrees.",
-            "term": "water"
-        },
-        {
-            "text": "She wore a yellow dress.",
-            "term": "yellow"
-        },
-        {
-            "text": "The zebra is running fast.",
-            "term": "zebra"
-        },
-        {
-            "text": "They walk to school every day.",
-            "term": "walk"
-        },
-        {
-            "text": "He likes to run every morning.",
-            "term": "run"
-        },
-        {
-            "text": "I think she is kind.",
-            "term": "think"
-        },
-        {
-            "text": "Give me a call later.",
-            "term": "give"
-        },
-        {
-            "text": "Take your time.",
-            "term": "take"
-        },
-        {
-            "text": "I see the stars at night.",
-            "term": "see"
-        },
-        {
-            "text": "Look out! There's a car coming.",
-            "term": "look"
-        },
-        {
-            "text": "Make a wish.",
-            "term": "make"
-        }
-    ]
+  "WordCreate": [
+    {
+      "term": "ubiquitous",
+      "definition": "Present, appearing, or found everywhere.",
+      "part_of_speech": "adjective",
+      "cefr": "C2",
+      "pronunciation": "[juːˈbɪkwɪtəs]"
+    },
+    {
+      "term": "ephemeral",
+      "definition": "Lasting for a very short time.",
+      "part_of_speech": "adjective",
+      "cefr": "C1",
+      "pronunciation": "[ɪˈfɛmərəl]"
+    },
+    {
+      "term": "serendipity",
+      "definition": "The occurrence and development of events by chance in a happy or beneficial way.",
+      "part_of_speech": "noun",
+      "cefr": "C1",
+      "pronunciation": "[ˌsɛrənˈdɪpəti]"
+    },
+    {
+      "term": "benevolent",
+      "definition": "Well meaning and kindly.",
+      "part_of_speech": "adjective",
+      "cefr": "B2",
+      "pronunciation": "[bəˈnɛvələnt]"
+    },
+    {
+      "term": "paradigm",
+      "definition": "A typical example or pattern of something; a model.",
+      "part_of_speech": "noun",
+      "cefr": "C1",
+      "pronunciation": "[ˈpærədaɪm]"
+    },
+    {
+      "term": "perfunctory",
+      "definition": "Done merely as a duty; performed without interest or enthusiasm.",
+      "part_of_speech": "adjective",
+      "cefr": "C2",
+      "pronunciation": "[pərˈfʌŋktəri]"
+    },
+    {
+      "term": "inundate",
+      "definition": "Overwhelm (someone) with things or people to be dealt with.",
+      "part_of_speech": "verb",
+      "cefr": "B2",
+      "pronunciation": "[ˈɪnʌndeɪt]"
+    },
+    {
+      "term": "resilience",
+      "definition": "The capacity to recover quickly from difficulties; toughness.",
+      "part_of_speech": "noun",
+      "cefr": "B2",
+      "pronunciation": "[rɪˈzɪliəns]"
+    },
+    {
+      "term": "elicit",
+      "definition": "Evoke or draw out (a response, answer, or fact) from someone.",
+      "part_of_speech": "verb",
+      "cefr": "B2",
+      "pronunciation": "[ɪˈlɪsɪt]"
+    },
+    {
+      "term": "mitigate",
+      "definition": "Make less severe, serious, or painful.",
+      "part_of_speech": "verb",
+      "cefr": "C1",
+      "pronunciation": "[ˈmɪtɪɡeɪt]"
+    },
+    {
+      "term": "novice",
+      "definition": "A person new to or inexperienced in a field or situation.",
+      "part_of_speech": "noun",
+      "cefr": "B1",
+      "pronunciation": "[ˈnɒvɪs]"
+    },
+    {
+      "term": "pensive",
+      "definition": "Engaged in, reflecting deep or serious thought.",
+      "part_of_speech": "adjective",
+      "cefr": "C1",
+      "pronunciation": "[ˈpɛnsɪv]"
+    },
+    {
+      "term": "tacit",
+      "definition": "Understood or implied without being stated.",
+      "part_of_speech": "adjective",
+      "cefr": "C1",
+      "pronunciation": "[ˈtæsɪt]"
+    },
+    {
+      "term": "capricious",
+      "definition": "Given to sudden and unaccountable changes of mood or behavior.",
+      "part_of_speech": "adjective",
+      "cefr": "C2",
+      "pronunciation": "[kəˈprɪʃəs]"
+    },
+    {
+      "term": "concise",
+      "definition": "Giving a lot of information clearly and in a few words; brief but comprehensive.",
+      "part_of_speech": "adjective",
+      "cefr": "B1",
+      "pronunciation": "[kənˈsaɪs]"
+    }
+  ],
+  "SentenceCreate": [
+    {
+      "text": "Mobile phones are becoming increasingly ubiquitous in the modern world.",
+      "word_id": 1
+    },
+    {
+      "text": "The beauty of a sunset is sadly ephemeral.",
+      "word_id": 2
+    },
+    {
+      "text": "It was pure serendipity that I ran into my old friend at the airport.",
+      "term": "serendipity"
+    },
+    {
+      "text": "She has a truly benevolent nature, always helping those in need.",
+      "term": "benevolent"
+    },
+    {
+      "text": "The internet has caused a major paradigm shift in how we communicate.",
+      "term": "paradigm"
+    },
+    {
+      "text": "He gave a perfunctory nod, clearly not interested in the details.",
+      "term": "perfunctory"
+    },
+    {
+      "text": "After the storm, we were inundated with calls for help.",
+      "term": "inundate"
+    },
+    {
+      "text": "Her amazing resilience allowed her to bounce back quickly after the loss.",
+      "term": "resilience"
+    },
+    {
+      "text": "The journalist tried to elicit a response from the politician.",
+      "term": "elicit"
+    },
+    {
+      "text": "They are hoping to mitigate the impact of the new regulations.",
+      "term": "mitigate"
+    },
+    {
+      "text": "As a novice programmer, I have a lot to learn.",
+      "term": "novice"
+    },
+    {
+      "text": "She looked pensive, staring out the window at the rain.",
+      "term": "pensive"
+    },
+    {
+      "text": "We had a tacit agreement that we wouldn't discuss the past.",
+      "term": "tacit"
+    },
+    {
+      "text": "His capricious changes of mood made it difficult to work with him.",
+      "term": "capricious"
+    },
+    {
+      "text": "Please make your report concise and to the point.",
+      "term": "concise"
+    }
+  ]
 }

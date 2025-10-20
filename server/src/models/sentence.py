@@ -1,16 +1,19 @@
 from sqlmodel import SQLModel, Field, Relationship
 
+from src.models.word import WordBase
+
 
 class SentenceBase(SQLModel):
     text: str
 
 
 class SentenceCreate(SentenceBase):
-    term: str
+    word_id: int | None = None
+    term: str | None = None
 
 
 class SentencePublic(SentenceBase):
-    term: str
+    word: WordBase
 
 
 class Sentence(SentenceBase, table=True):

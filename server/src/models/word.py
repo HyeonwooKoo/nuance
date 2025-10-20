@@ -12,9 +12,11 @@ class CEFRLevel(str, enum.Enum):
 
 
 class WordBase(SQLModel):
-    term: str = Field(unique=True, index=True)
+    term: str = Field(index=True)
     definition: str
+    part_of_speech: str
     cefr: CEFRLevel
+    pronunciation: str
 
 
 class WordCreate(WordBase):

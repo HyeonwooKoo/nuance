@@ -20,12 +20,8 @@ def get_random_sentences(
     sentences = []
     for word in random_words:
         random_sentence = session.exec(
-            select(Sentence)
-            .where(Sentence.word_id == word.id)
-            .order_by(func.random())
-            .limit(1)
+            select(Sentence).where(Sentence.word_id == word.id).order_by(func.random())
         ).first()
-
         sentences.append(random_sentence)
 
-    return [SentencePublic(text=s.text, term=s.word.term) for s in sentences]
+    return [SentencePublic(text=s.text, word=s.word) for s in sentences]
