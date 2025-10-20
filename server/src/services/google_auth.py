@@ -1,5 +1,6 @@
-import jwt
 from google_auth_oauthlib.flow import Flow
+from google.auth.transport.requests import Request
+from google.oauth2 import id_token as google_id_token
 from oauthlib.oauth2 import OAuth2Error
 
 from src.core.config import settings
@@ -32,7 +33,10 @@ def get_google_user_info(auth_code: str) -> dict:
         creds = flow.credentials
         id_token = creds.id_token
 
-        token_payload = jwt.decode(id_token, options={"verify_signature": False})
+        request = Request()
+        token_payload = google_id_token.verify_oauth2_token(
+            id_token, request, settings.GOOGLE_CLIENT_ID
+        )
 
         user_info = {
             "email": token_payload.get("email"),
