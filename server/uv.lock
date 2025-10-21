@@ -123,6 +123,18 @@ wheels = [
 ]
 
 [[package]]
+name = "fsrs"
+version = "6.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ee/4c/8191a44434d7e41f039a3bac58ac540fd077189b036f9b0d1ff882f2a713/fsrs-6.3.0.tar.gz", hash = "sha256:3abbafd66469ebf58d35a5d5bb693a492e1db44232e09aa8e4d731bf047cd0ae", size = 32430, upload-time = "2025-10-13T07:10:01.094Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f9/98/463f1f89532627acd958f065f4af3054e614de4cd11e1e88a21594a2039f/fsrs-6.3.0-py3-none-any.whl", hash = "sha256:deb2b613c917651a48ec90dfde3b1c8808d136f8ae78ffdcc00a5ddb216db78e", size = 22593, upload-time = "2025-10-13T07:09:59.924Z" },
+]
+
+[[package]]
 name = "google-api-core"
 version = "2.25.1"
 source = { registry = "https://pypi.org/simple" }
@@ -597,6 +609,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "alembic" },
     { name = "fastapi" },
+    { name = "fsrs" },
     { name = "google-api-python-client" },
     { name = "google-auth-httplib2" },
     { name = "google-auth-oauthlib" },
@@ -616,6 +629,7 @@ dev = [
 requires-dist = [
     { name = "alembic", specifier = ">=1.16.5,<2.0.0" },
     { name = "fastapi", specifier = ">=0.116.1,<0.117.0" },
+    { name = "fsrs", specifier = ">=6.3.0" },
     { name = "google-api-python-client", specifier = ">=2.181.0,<3.0.0" },
     { name = "google-auth-httplib2", specifier = ">=0.2.0,<0.3.0" },
     { name = "google-auth-oauthlib", specifier = ">=1.2.2,<2.0.0" },
