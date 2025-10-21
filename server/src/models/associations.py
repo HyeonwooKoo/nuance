@@ -1,6 +1,6 @@
 import uuid
 import enum
-from sqlmodel import Field, SQLModel
+from sqlmodel import Field, SQLModel, UniqueConstraint, func
 from datetime import datetime
 
 
@@ -19,14 +19,13 @@ class Rating(enum.IntEnum):
 
 class ReviewStat(SQLModel, table=True):
     __tablename__ = "review_stats"
+    __table_args__ = (UniqueConstraint("user_id", "word_id", name="uq_user_word"),)
 
     id: int | None = Field(default=None, primary_key=True)
-    user_id: uuid.UUID = Field(
-        foreign_key="users.id", primary_key=True, ondelete="CASCADE"
-    )
-    word_id: int = Field(foreign_key="words.id", primary_key=True, ondelete="CASCADE")
+    user_id: uuid.UUID = Field(foreign_key="users.id", ondelete="CASCADE", index=True)
+    word_id: int = Field(foreign_key="words.id", ondelete="CASCADE", index=True)
     state: State
-    step: int
+    step: int | None
     stability: float
     difficulty: float
     due: datetime
@@ -38,11 +37,9 @@ class ReviewLog(SQLModel, table=True):
 
     id: int | None = Field(default=None, primary_key=True)
     review_stat_id: int = Field(
-        foreign_key="review_stats.id", primary_key=True, ondelete="CASCADE"
+        foreign_key="review_stats.id", ondelete="CASCADE", index=True
     )
-    sentence_id: int = Field(
-        foreign_key="sentences.id", primary_key=True, ondelete="CASCADE"
-    )
+    sentence_id: int = Field(foreign_key="sentences.id", ondelete="CASCADE")
     rating: Rating
-    reviewed_at: datetime = Field(default_factory=datetime)
-    duration_ms: int
+    reviewed_at: datetime = Field(default=func.now())
+    duration_ms: int | None
