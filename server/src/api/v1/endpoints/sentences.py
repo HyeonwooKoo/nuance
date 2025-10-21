@@ -24,4 +24,4 @@ def get_random_sentences(
         ).first()
         sentences.append(random_sentence)
 
-    return [SentencePublic(text=s.text, word=s.word) for s in sentences]
+    return [SentencePublic.model_validate(s) for s in sentences]

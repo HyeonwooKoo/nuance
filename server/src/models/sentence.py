@@ -13,6 +13,7 @@ class SentenceCreate(SentenceBase):
 
 
 class SentencePublic(SentenceBase):
+    id: int
     word: WordBase
 
 
