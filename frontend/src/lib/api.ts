@@ -19,4 +19,19 @@ api.interceptors.request.use(
   }
 );
 
+export interface ReviewResponse {
+  message: string;
+}
+
+export const reviewSentence = async (
+  sentenceId: number,
+  rating: string
+): Promise<ReviewResponse> => {
+  const ratingNum = { again: 1, hard: 2, good: 3, easy: 4 }[rating];
+  const response = await api.post<ReviewResponse>(
+    `/sentences/${sentenceId}/review?rating=${ratingNum}`
+  );
+  return response.data;
+};
+
 export default api;
