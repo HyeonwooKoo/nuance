@@ -1,5 +1,5 @@
 from sqlmodel import SQLModel, Field, Relationship
-
+from datetime import datetime
 from src.models.word import WordBase
 
 
@@ -15,6 +15,7 @@ class SentenceCreate(SentenceBase):
 class SentencePublic(SentenceBase):
     id: int
     word: WordBase
+    due: datetime | None = None
 
 
 class Sentence(SentenceBase, table=True):
