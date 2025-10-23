@@ -4,28 +4,7 @@ import datetime as dt
 import fsrs
 from sqlmodel import Session, select
 
-from src.models.associations import Rating, ReviewLog, ReviewStat
-from src.models.sentence import Sentence
-
-
-def review(
-    db: Session,
-    *,
-    user_id: uuid.UUID,
-    sentence_id: int,
-    rating: Rating,
-) -> ReviewStat:
-    sentence = db.exec(select(Sentence).where(Sentence.id == sentence_id)).one()
-    card = instantiate_card(db, user_id=user_id, word_id=sentence.word_id)
-    is_new = card.last_review is None
-
-    card, log = fsrs.Scheduler().review_card(card, rating=rating)
-    review_stat = update_review_stat(
-        db, is_new=is_new, card=card, user_id=user_id, word_id=sentence.word_id
-    )
-    log.card_id = review_stat.id
-    create_review_log(db, log=log, sentence_id=sentence_id)
-    return review_stat
+from src.models.associations import ReviewLog, ReviewStat
 
 
 def instantiate_card(
