@@ -4,7 +4,7 @@ from sqlmodel import Session, select
 
 def get_user_by_gmail(session: Session, *, gmail: str) -> User | None:
     statement = select(User).where(User.gmail == gmail)
-    user = session.exec(statement).first()
+    user = session.exec(statement).one_or_none()
     return user
 
 
