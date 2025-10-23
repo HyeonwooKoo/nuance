@@ -1,6 +1,11 @@
 from sqlmodel import Field, SQLModel, Relationship
 import enum
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .sentence import Sentence
+
 
 class CEFRLevel(str, enum.Enum):
     A1 = "A1"

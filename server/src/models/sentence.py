@@ -2,6 +2,11 @@ from sqlmodel import SQLModel, Field, Relationship
 from datetime import datetime
 from src.models.word import WordBase
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .word import Word
+
 
 class SentenceBase(SQLModel):
     text: str

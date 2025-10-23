@@ -1,14 +1,8 @@
-from .associations import *
-from .sentence import *
-from .user import *
-from .word import *
+from . import associations, sentence, user, word
 
 __all__ = [
-    "ReviewLog",
-    "ReviewStat",
-    "Sentence",
-    "User",
-    "CEFRLevel",
-    "Word",
-    "SentenceCreate",
+    "associations",
+    "sentence",
+    "user",
+    "word",
 ]

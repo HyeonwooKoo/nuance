@@ -1,6 +1,7 @@
 import json
 from sqlmodel import Session
-from src.models import WordCreate, SentenceCreate
+from src.models.word import WordCreate
+from src.models.sentence import SentenceCreate
 from src.services.word import create_word
 from src.services.sentence import create_sentence
 
