@@ -1,21 +1,20 @@
-from fastapi import APIRouter
-from sqlmodel import select
-from sqlmodel import literal
+from typing import Annotated
+from fastapi import APIRouter, Query
+from sqlmodel import select, literal
 from sqlalchemy.sql.expression import func
 from src.api.dep import CurrentUser, SessionDep
 from src.models.associations import ReviewStat, ReviewLog
 from src.models.sentence import Sentence, SentencePublic
-from src.services.word import get_word_ids_due_soon, get_word_ids_unseen
+from src.services.word import get_word_ids_unseen
 
 router = APIRouter()
 
 
-@router.get("/due-soon")
-def get_sentences_due_soon(
-    session: SessionDep, user: CurrentUser
+@router.get("/")
+def get_sentences(
+    session: SessionDep, user: CurrentUser, q: Annotated[list[int], Query()]
 ) -> list[SentencePublic]:
-    word_ids = get_word_ids_due_soon(session, user_id=user.id)
-
+    word_ids = q
     stats_sq = (
         select(ReviewStat)
         .where((ReviewStat.user_id == user.id) & (ReviewStat.word_id.in_(word_ids)))
