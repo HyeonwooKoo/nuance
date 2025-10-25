@@ -22,7 +22,7 @@ api.interceptors.request.use(
 );
 
 export interface ReviewResponse {
-  message: string;
+  next_due: Date | null;
 }
 
 export const reviewSentence = async (
@@ -31,13 +31,15 @@ export const reviewSentence = async (
 ): Promise<ReviewResponse> => {
   if (MOCK_API) {
     console.log("mock review sent");
-    return { message: "good" };
+    return { next_due: null };
   }
   const ratingNum = { again: 1, hard: 2, good: 3, easy: 4 }[rating];
   const response = await api.post<ReviewResponse>(
     `/sentences/${sentenceId}/review?rating=${ratingNum}`
   );
-  return response.data;
+  return {
+    next_due: response.data.next_due,
+  };
 };
 
 export default api;
