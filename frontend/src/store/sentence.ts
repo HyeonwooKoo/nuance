@@ -1,24 +1,54 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 import { dummyItems as allSentences } from "../dummyItems";
 import type { Sentence } from "../types/voca";
 
 interface SentenceState {
-  sentences: Sentence[];
-  setSentences: (sentences: Sentence[]) => void;
-  addSentence: () => void;
+  items: Sentence[];
+  due_word_ids: number[];
+  due_sentences: { [key: number]: Sentence };
+  unseen_sentences: Sentence[];
+  actions: SentenceActions;
 }
 
-export const useSentenceStore = create<SentenceState>((set) => ({
-  sentences: allSentences.slice(0, 1),
-  setSentences: (sentences) => set({ sentences }),
-  addSentence: () => {
-    set((state) => {
-      const nextIndex = state.sentences.length;
-      if (nextIndex < allSentences.length) {
-        return { sentences: [...state.sentences, allSentences[nextIndex]] };
-      }
-      return state; // No more dummy sentences to add
-    });
-  },
-}));
+interface SentenceActions {
+  pushItem: () => void;
+}
+
+export const useSentenceStore = create<SentenceState>()(
+  persist(
+    (set, get) => ({
+      items: allSentences.slice(0, 1) as Sentence[],
+      due_word_ids: [] as number[],
+      due_sentences: {} as { [key: number]: Sentence },
+      unseen_sentences: [] as Sentence[],
+      actions: {
+        pushItem: () => {
+          if (get().due_word_ids.length > 0) {
+            console.log("push a sentence for a due word");
+          } else {
+            console.log("push a sentence for a unseen word");
+          }
+
+          // Implementation for adding a new sentence
+          set(({ items }) => {
+            const nextIndex = items.length;
+            if (nextIndex < allSentences.length) {
+              return { items: [...items, allSentences[nextIndex]] };
+            }
+            return {};
+          });
+        },
+      },
+    }),
+    {
+      name: "sentence-storage",
+      partialize: (state) => ({
+        due_word_ids: state.due_word_ids,
+        due_sentences: state.due_sentences,
+        unseen_sentences: state.unseen_sentences,
+      }),
+    }
+  )
+);
