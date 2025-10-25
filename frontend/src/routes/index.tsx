@@ -8,7 +8,7 @@ export const Route = createFileRoute('/')({
 })
 
 function Index() {
-  const sentences = useSentenceStore((state) => state.sentences);
+  const sentences = useSentenceStore((state) => state.items);
 
   return (
     <div className="mx-auto flex max-w-screen-sm flex-col gap-4 p-4">

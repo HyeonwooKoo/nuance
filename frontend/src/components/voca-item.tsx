@@ -31,7 +31,7 @@ export function VocaItem({ sentence }: VocaItemProps) {
   const [isConfirmed, setIsConfirmed] = useState(false);
   const isDescripted = state !== "idle" && state !== "easy";
 
-  const addSentence = useSentenceStore((state) => state.addSentence);
+  const pushItem = useSentenceStore((state) => state.actions.pushItem);
 
   const setRating = (state: "idle" | Rating) => {
     setState(state);
@@ -58,8 +58,8 @@ export function VocaItem({ sentence }: VocaItemProps) {
 
   useEffect(() => {
     if (isReviewed)
-      addSentence();
-  }, [isReviewed, addSentence]);
+      pushItem();
+  }, [isReviewed, pushItem]);
 
   return (
     <motion.div
