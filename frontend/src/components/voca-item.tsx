@@ -3,11 +3,10 @@ import _ from "lodash";
 import { Bird, Check, Lightbulb } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
-import { reviewSentence } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { useSentenceStore } from "@/store/sentence";
 
-import type { Sentence } from "../types/voca";
+import type { Rating,Sentence } from "../types/voca";
 import {
   Accordion,
   AccordionContent,
@@ -22,7 +21,6 @@ type VocaItemProps = {
   sentence: Sentence;
 };
 
-type Rating = "easy" | "good" | "hard" | "again";
 type VocaItemState = "idle" | "descripted" | Rating;
 
 export function VocaItem({ sentence }: VocaItemProps) {
@@ -31,7 +29,7 @@ export function VocaItem({ sentence }: VocaItemProps) {
   const [isConfirmed, setIsConfirmed] = useState(false);
   const isDescripted = state !== "idle" && state !== "easy";
 
-  const pushItem = useSentenceStore((state) => state.actions.pushItem);
+  const { pushItem, reviewItem } = useSentenceStore((state) => state.actions);
 
   const setRating = (state: "idle" | Rating) => {
     setState(state);
@@ -41,9 +39,9 @@ export function VocaItem({ sentence }: VocaItemProps) {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const postReview = useCallback(
-    _.debounce(async (rating: string) => {
+    _.debounce(async (rating: Rating) => {
       setIsConfirmed(true);
-      reviewSentence(sentence.id, rating);
+      reviewItem(sentence.word.id, sentence.id, rating);
     }, 3000),
     [sentence.id]
   );

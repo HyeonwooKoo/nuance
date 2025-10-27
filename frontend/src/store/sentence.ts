@@ -1,8 +1,10 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+import { reviewSentence } from "@/lib/api";
+
 import { dummyItems as allSentences } from "../dummyItems";
-import type { Sentence } from "../types/voca";
+import type { Rating, Sentence } from "../types/voca";
 
 interface SentenceState {
   items: Sentence[];
@@ -14,6 +16,7 @@ interface SentenceState {
 
 interface SentenceActions {
   pushItem: () => void;
+  reviewItem: (wid: number, sid: number, rating: Rating) => void;
 }
 
 export const useSentenceStore = create<SentenceState>()(
@@ -28,7 +31,7 @@ export const useSentenceStore = create<SentenceState>()(
           if (get().due_word_ids.length > 0) {
             console.log("push a sentence for a due word");
           } else {
-            console.log("push a sentence for a unseen word");
+            console.log("push a sentence for an unseen word");
           }
 
           // Implementation for adding a new sentence
@@ -39,6 +42,10 @@ export const useSentenceStore = create<SentenceState>()(
             }
             return {};
           });
+        },
+        reviewItem: (_, sid, rating) => {
+          // TODO
+          reviewSentence(sid, rating);
         },
       },
     }),
