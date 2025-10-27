@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import type { Sentence } from "@/types/voca";
+
 import { useAuthStore } from "../store/auth";
 
 const USE_MOCK_API = import.meta.env.VITE_USE_MOCK_API;
@@ -21,25 +23,77 @@ api.interceptors.request.use(
   }
 );
 
-export interface ReviewResponse {
-  next_due: Date | null;
+export interface ReviewStat {
+  id: number;
+  user_id: string;
+  word_id: number;
+  state: number;
+  step: number | null;
+  stability: number;
+  difficulty: number;
+  due: Date;
+  last_reviewed_at: Date;
 }
 
 export const reviewSentence = async (
   sentenceId: number,
   rating: string
-): Promise<ReviewResponse> => {
+): Promise<ReviewStat> => {
   if (USE_MOCK_API) {
     console.log("mock review sent");
-    return { next_due: null };
+    return {
+      id: 1,
+      user_id: "mock-user-id",
+      word_id: 1,
+      state: 1,
+      step: 1,
+      stability: 1,
+      difficulty: 1,
+      due: new Date(),
+      last_reviewed_at: new Date(),
+    };
   }
   const ratingNum = { again: 1, hard: 2, good: 3, easy: 4 }[rating];
-  const response = await api.post<ReviewResponse>(
+  const response = await api.post<ReviewStat>(
     `/sentences/${sentenceId}/review?rating=${ratingNum}`
   );
   return {
-    next_due: response.data.next_due,
+    ...response.data,
+    due: new Date(response.data.due),
+    last_reviewed_at: new Date(response.data.last_reviewed_at),
   };
+};
+
+export const getSentences = async (wordIds: number[]): Promise<Sentence[]> => {
+  if (USE_MOCK_API) {
+    console.log("mock getSentences called");
+    return [];
+  }
+  const response = await api.get<Sentence[]>("/sentences", {
+    params: { q: wordIds },
+    paramsSerializer: {
+      indexes: null, // no brackets
+    },
+  });
+  return response.data;
+};
+
+export const getUnseenSentences = async (): Promise<Sentence[]> => {
+  if (USE_MOCK_API) {
+    console.log("mock getUnseenSentences called");
+    return [];
+  }
+  const response = await api.get<Sentence[]>("/sentences/unseen");
+  return response.data;
+};
+
+export const getDueSoonWordIds = async (): Promise<number[]> => {
+  if (USE_MOCK_API) {
+    console.log("mock getDueSoonWordIds called");
+    return [];
+  }
+  const response = await api.get<number[]>("/words/due-soon");
+  return response.data;
 };
 
 export default api;
