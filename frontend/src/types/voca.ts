@@ -12,6 +12,6 @@ export interface Word {
 export interface Sentence {
   id: number;
   text: string;
-  due: Date;
+  due?: Date;
   word: Word;
 }
