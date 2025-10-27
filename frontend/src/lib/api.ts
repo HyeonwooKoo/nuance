@@ -2,10 +2,10 @@ import axios from "axios";
 
 import { useAuthStore } from "../store/auth";
 
-const MOCK_API = true;
+const USE_MOCK_API = import.meta.env.VITE_USE_MOCK_API;
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/api/v1",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
 });
 
 api.interceptors.request.use(
@@ -29,7 +29,7 @@ export const reviewSentence = async (
   sentenceId: number,
   rating: string
 ): Promise<ReviewResponse> => {
-  if (MOCK_API) {
+  if (USE_MOCK_API) {
     console.log("mock review sent");
     return { next_due: null };
   }
