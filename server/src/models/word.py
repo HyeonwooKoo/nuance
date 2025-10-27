@@ -24,6 +24,10 @@ class WordBase(SQLModel):
     pronunciation: str
 
 
+class WordPublic(WordBase):
+    id: int
+
+
 class WordCreate(WordBase):
     pass
 

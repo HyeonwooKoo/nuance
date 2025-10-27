@@ -1,6 +1,6 @@
 from sqlmodel import SQLModel, Field, Relationship
 from datetime import datetime
-from src.models.word import WordBase
+from src.models.word import WordPublic
 
 from typing import TYPE_CHECKING
 
@@ -19,7 +19,7 @@ class SentenceCreate(SentenceBase):
 
 class SentencePublic(SentenceBase):
     id: int
-    word: WordBase
+    word: WordPublic
     due: datetime | None = None
 
 
