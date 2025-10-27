@@ -42,7 +42,8 @@ export function VocaItem({ sentence }: VocaItemProps) {
     _.debounce(async (rating: Rating) => {
       setIsConfirmed(true);
       reviewItem(sentence.word.id, sentence.id, rating);
-    }, 3000),
+      pushItem();
+    }, 0),
     [sentence.id]
   );
   
@@ -55,8 +56,6 @@ export function VocaItem({ sentence }: VocaItemProps) {
   }, [state, postReview]);
 
   useEffect(() => {
-    if (isReviewed)
-      pushItem();
   }, [isReviewed, pushItem]);
 
   return (
