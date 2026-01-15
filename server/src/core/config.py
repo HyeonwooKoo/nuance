@@ -12,12 +12,15 @@ class Settings(BaseSettings):
     GOOGLE_CLIENT_ID: str
     GOOGLE_CLIENT_SECRET: str
     JWT_SECRET: str
-    REDIRECT_URI: str = "http://localhost:5173"
 
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str
     POSTGRES_HOST: str
     DATABASE_URL: str
+
+    @property
+    def REDIRECT_URI(self) -> str:
+        return self.FRONTEND_HOST
 
     @property
     def all_cors_origins(self) -> list[str]:
