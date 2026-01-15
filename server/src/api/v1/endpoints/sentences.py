@@ -10,7 +10,7 @@ from src.services.word import get_word_ids_unseen
 router = APIRouter()
 
 
-@router.get("/")
+@router.get("")
 def get_sentences(
     session: SessionDep, user: CurrentUser, q: Annotated[list[int], Query()]
 ) -> list[SentencePublic]:
