@@ -4,7 +4,7 @@ import type { Sentence } from "@/types/voca";
 
 import { useAuthStore } from "../store/auth";
 
-const USE_MOCK_API = import.meta.env.VITE_USE_MOCK_API;
+const USE_MOCK_API = import.meta.env.VITE_USE_MOCK_API === 'true';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,

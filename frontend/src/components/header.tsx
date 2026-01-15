@@ -9,7 +9,7 @@ import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 import { UserNav } from "./user-nav";
 
-const DEV_MODE = import.meta.env.VITE_DEV_MODE;
+const DEV_MODE = import.meta.env.VITE_DEV_MODE === 'true';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
