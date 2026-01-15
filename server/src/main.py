@@ -19,6 +19,11 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Nuance API", lifespan=lifespan)
 
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
+
 @app.exception_handler(GoogleAuthError)
 async def google_auth_exception_handler(request: Request, exc: GoogleAuthError):
     return JSONResponse(
