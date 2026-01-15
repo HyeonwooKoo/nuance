@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useAuthStore } from '@/store/auth';
 
 import { VocaItem } from "../components/voca-item";
+import { Spinner } from "../components/ui/spinner";
 import { useSentenceStore } from '../store/sentence';
 
 export const Route = createFileRoute('/')({
@@ -13,6 +14,7 @@ export const Route = createFileRoute('/')({
 function Index() {
   const user = useAuthStore((state) => state.user);
   const items = useSentenceStore((state) => state.items);
+  const isWaiting = useSentenceStore((state) => state.isWaiting);
   const init = useSentenceStore((state) => state.actions.init);
 
   useEffect(() => {
@@ -28,6 +30,7 @@ function Index() {
           sentence={sentence}
         />
       ))}
+      {isWaiting && <Spinner className="mx-auto" />}
     </div>
   )
 }

@@ -62,8 +62,10 @@ export const useSentenceStore = create<SentenceState>()(
                 ),
               },
             }));
-            if (get().isWaiting)
+            if (get().isWaiting) {
               get().actions.pushItem();
+              set({ isWaiting: false }); 
+            }
           },
 
           pushItem: () => {
