@@ -23,7 +23,7 @@ function Index() {
   }, [user, init]);
 
   return (
-    <div className="mx-auto flex max-w-screen-sm flex-col gap-4 p-4">
+    <div className="mx-auto flex max-w-screen-sm flex-col gap-4 p-4 pb-64">
       {items.map((sentence) => (
         <VocaItem
           key={sentence.id}
