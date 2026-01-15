@@ -11,7 +11,8 @@ interface WordID {
 }
 
 interface SentenceState {
-  isLoading: boolean;
+  isFetching: boolean;
+  isWaiting: boolean;
   items: Sentence[];
   dueIds: WordID[];
   unseenIds: WordID[];
@@ -30,23 +31,20 @@ export const useSentenceStore = create<SentenceState>()(
   devtools(
     persist(
       (set, get) => ({
-        isLoading: false,
+        isFetching: false,
+        isWaiting: false,
         items: [] as Sentence[],
         dueIds: [] as WordID[],
         unseenIds: [] as WordID[],
         sentenceMap: {} as { [key: number]: Sentence },
         actions: {
           init: async () => {
-            if (get().isLoading) return;
-
-            if (get().dueIds.length + get().unseenIds.length <= 0) {
-              await get().actions.pushUnseenSentences();
-            }
+            if (get().items.length > 0) return;
             get().actions.pushItem();
-            set({ isLoading: false });
           },
 
           pushUnseenSentences: async () => {
+            set({ isFetching: true });
             const unseenSentences = await getUnseenSentences();
             const sentencesToPush = unseenSentences.filter((s) =>
               get().unseenIds.every((dueid) => dueid.wid != s.word.id)
@@ -64,6 +62,8 @@ export const useSentenceStore = create<SentenceState>()(
                 ),
               },
             }));
+            if (get().isWaiting)
+              get().actions.pushItem();
           },
 
           pushItem: () => {
@@ -78,6 +78,8 @@ export const useSentenceStore = create<SentenceState>()(
               set((prev) => ({
                 items: [...prev.items, prev.sentenceMap[prev.unseenIds[0].wid]],
               }));
+            } else {
+              set({ isWaiting: true });
             }
 
             if (get().unseenIds.length < 5) {
