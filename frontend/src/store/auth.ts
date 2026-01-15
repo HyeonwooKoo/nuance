@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { useSentenceStore } from "./sentence";
 
 interface User {
   email: string;
@@ -29,6 +30,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   logout: () => {
     localStorage.removeItem("nuance_user");
     localStorage.removeItem("nuance_token");
+    useSentenceStore.getState().actions.reset();
     set({ user: null, token: null });
   },
 }));

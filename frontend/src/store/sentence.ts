@@ -17,6 +17,7 @@ interface SentenceState {
   dueIds: WordID[];
   unseenIds: WordID[];
   sentenceMap: { [key: number]: Sentence };
+  abortController: AbortController;
   actions: SentenceActions;
 }
 
@@ -25,6 +26,7 @@ interface SentenceActions {
   pushUnseenSentences: () => Promise<void>;
   pushItem: () => void;
   reviewItem: (wid: number, sid: number, rating: Rating) => Promise<void>;
+  reset: () => void;
 }
 
 export const useSentenceStore = create<SentenceState>()(
@@ -37,6 +39,7 @@ export const useSentenceStore = create<SentenceState>()(
         dueIds: [] as WordID[],
         unseenIds: [] as WordID[],
         sentenceMap: {} as { [key: number]: Sentence },
+        abortController: new AbortController(),
         actions: {
           init: async () => {
             if (get().items.length > 0) return;
@@ -44,27 +47,34 @@ export const useSentenceStore = create<SentenceState>()(
           },
 
           pushUnseenSentences: async () => {
+            if (get().abortController.signal.aborted) return;
             set({ isFetching: true });
-            const unseenSentences = await getUnseenSentences();
-            const sentencesToPush = unseenSentences.filter((s) =>
-              get().unseenIds.every((dueid) => dueid.wid != s.word.id)
-            );
-            set(({ unseenIds, sentenceMap }) => ({
-              isFetching: false,
-              unseenIds: [
-                ...unseenIds,
-                ...sentencesToPush.map((s) => ({ wid: s.word.id })),
-              ],
-              sentenceMap: {
-                ...sentenceMap,
-                ...Object.fromEntries(
-                  sentencesToPush.map((s) => [s.word.id, s])
-                ),
-              },
-            }));
-            if (get().isWaiting) {
-              get().actions.pushItem();
-              set({ isWaiting: false }); 
+            try {
+              const unseenSentences = await getUnseenSentences();
+              if (get().abortController.signal.aborted) return;
+              const sentencesToPush = unseenSentences.filter((s) =>
+                get().unseenIds.every((dueid) => dueid.wid != s.word.id)
+              );
+              set(({ unseenIds, sentenceMap }) => ({
+                isFetching: false,
+                unseenIds: [
+                  ...unseenIds,
+                  ...sentencesToPush.map((s) => ({ wid: s.word.id })),
+                ],
+                sentenceMap: {
+                  ...sentenceMap,
+                  ...Object.fromEntries(
+                    sentencesToPush.map((s) => [s.word.id, s])
+                  ),
+                },
+              }));
+              if (get().isWaiting) {
+                get().actions.pushItem();
+                set({ isWaiting: false }); 
+              }
+            } catch (error) {
+              if (get().abortController.signal.aborted) return;
+              set({ isFetching: false });
             }
           },
 
@@ -104,6 +114,19 @@ export const useSentenceStore = create<SentenceState>()(
               const dueId = { due: response.due, wid };
               set(({ dueIds }) => ({ dueIds: [dueId, ...dueIds] }));
             }
+          },
+
+          reset: () => {
+            get().abortController.abort();
+            set({
+              isFetching: false,
+              isWaiting: false,
+              items: [],
+              dueIds: [],
+              unseenIds: [],
+              sentenceMap: {},
+              abortController: new AbortController(),
+            });
           },
         },
       }),
