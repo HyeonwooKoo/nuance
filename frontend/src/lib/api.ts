@@ -86,6 +86,11 @@ export const getUnseenSentences = async (language: string = "Eng"): Promise<Sent
   const response = await api.get<Sentence[]>("/sentences/unseen", {
     params: { language },
   });
+
+  if (response.data.length <= 0) {
+    console.error("No unseen sentences left");
+    throw new Error("No unseen sentences left");
+  }
   return response.data;
 };
 

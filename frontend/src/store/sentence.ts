@@ -42,7 +42,7 @@ export const useSentenceStore = create<SentenceState>()(
         abortController: new AbortController(),
         actions: {
           init: async () => {
-            if (get().items.length > 0) return;
+            if (get().items.length > 0 || get().isFetching) return;
             get().actions.pushItem();
           },
 
@@ -74,7 +74,7 @@ export const useSentenceStore = create<SentenceState>()(
               }
             } catch (error) {
               if (get().abortController.signal.aborted) return;
-              set({ isFetching: false });
+              set({ isFetching: false, isWaiting: false });
             }
           },
 
