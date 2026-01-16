@@ -2,8 +2,8 @@ from src.models.user import User, UserCreate
 from sqlmodel import Session, select
 
 
-def get_user_by_gmail(session: Session, *, gmail: str) -> User | None:
-    statement = select(User).where(User.gmail == gmail)
+def get_user_by_email(session: Session, *, email: str) -> User | None:
+    statement = select(User).where(User.email == email)
     user = session.exec(statement).one_or_none()
     return user
 

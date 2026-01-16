@@ -42,7 +42,7 @@ def get_current_user(session: SessionDep, token: TokenDep) -> User:
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Could not validate credentials.",
         )
-    user = user_service.get_user_by_gmail(session, gmail=token_data.sub)
+    user = user_service.get_user_by_email(session, email=token_data.sub)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
     return user
@@ -60,7 +60,7 @@ def get_optional_current_user(session: SessionDep, token: TokenDep) -> User | No
     except (jwt.InvalidTokenError, ValidationError):
         return None
 
-    user = user_service.get_user_by_gmail(session, gmail=token_data.sub)
+    user = user_service.get_user_by_email(session, email=token_data.sub)
     return user
 
 

@@ -3,7 +3,7 @@ from sqlmodel import Field, SQLModel
 
 
 class UserBase(SQLModel):
-    gmail: str = Field(unique=True, index=True)
+    email: str = Field(unique=True, index=True)
     name: str
     is_superuser: bool = False
 
