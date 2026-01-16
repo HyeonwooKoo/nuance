@@ -55,9 +55,9 @@ def get_sentences(
 
 @router.get("/unseen")
 def get_sentences_unseen(
-    session: SessionDep, user: CurrentUser
+    session: SessionDep, user: CurrentUser, language: str = "Eng"
 ) -> list[SentencePublic]:
-    word_ids = get_word_ids_unseen(session, user_id=user.id)
+    word_ids = get_word_ids_unseen(session, user_id=user.id, language=language)
 
     sq = (
         select(

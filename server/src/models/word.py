@@ -22,6 +22,7 @@ class WordBase(SQLModel):
     part_of_speech: str
     cefr: CEFRLevel
     pronunciation: str
+    language: str = Field(default="Eng", index=True)
 
 
 class WordPublic(WordBase):

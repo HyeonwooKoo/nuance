@@ -6,7 +6,7 @@ router = APIRouter()
 
 
 @router.get("/due-soon")
-def get_words_due_soon(session: SessionDep, user: CurrentUser) -> list[int]:
+def get_words_due_soon(session: SessionDep, user: CurrentUser, language: str = "Eng") -> list[int]:
     return get_word_ids_due_soon(
-        session, user_id=user.id, max_count=20, due_in_minutes=15
+        session, user_id=user.id, max_count=20, due_in_minutes=15, language=language
     )

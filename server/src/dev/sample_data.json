@@ -5,167 +5,197 @@
       "definition": "Present, appearing, or found everywhere.",
       "part_of_speech": "adjective",
       "cefr": "C2",
-      "pronunciation": "[juːˈbɪkwɪtəs]"
+      "pronunciation": "[juːˈbɪkwɪtəs]",
+      "language": "Eng"
     },
     {
       "term": "ephemeral",
       "definition": "Lasting for a very short time.",
       "part_of_speech": "adjective",
       "cefr": "C1",
-      "pronunciation": "[ɪˈfɛmərəl]"
+      "pronunciation": "[ɪˈfɛmərəl]",
+      "language": "Eng"
     },
     {
       "term": "serendipity",
       "definition": "The occurrence and development of events by chance in a happy or beneficial way.",
       "part_of_speech": "noun",
       "cefr": "C1",
-      "pronunciation": "[ˌsɛrənˈdɪpəti]"
+      "pronunciation": "[ˌsɛrənˈdɪpəti]",
+      "language": "Eng"
     },
     {
       "term": "benevolent",
       "definition": "Well meaning and kindly.",
       "part_of_speech": "adjective",
       "cefr": "B2",
-      "pronunciation": "[bəˈnɛvələnt]"
+      "pronunciation": "[bəˈnɛvələnt]",
+      "language": "Eng"
     },
     {
       "term": "paradigm",
       "definition": "A typical example or pattern of something; a model.",
       "part_of_speech": "noun",
       "cefr": "C1",
-      "pronunciation": "[ˈpærədaɪm]"
+      "pronunciation": "[ˈpærədaɪm]",
+      "language": "Eng"
     },
     {
       "term": "perfunctory",
       "definition": "Done merely as a duty; performed without interest or enthusiasm.",
       "part_of_speech": "adjective",
       "cefr": "C2",
-      "pronunciation": "[pərˈfʌŋktəri]"
+      "pronunciation": "[pərˈfʌŋktəri]",
+      "language": "Eng"
     },
     {
       "term": "inundate",
       "definition": "Overwhelm (someone) with things or people to be dealt with.",
       "part_of_speech": "verb",
       "cefr": "B2",
-      "pronunciation": "[ˈɪnʌndeɪt]"
+      "pronunciation": "[ˈɪnʌndeɪt]",
+      "language": "Eng"
     },
     {
       "term": "resilience",
       "definition": "The capacity to recover quickly from difficulties; toughness.",
       "part_of_speech": "noun",
       "cefr": "B2",
-      "pronunciation": "[rɪˈzɪliəns]"
+      "pronunciation": "[rɪˈzɪliəns]",
+      "language": "Eng"
     },
     {
       "term": "elicit",
       "definition": "Evoke or draw out (a response, answer, or fact) from someone.",
       "part_of_speech": "verb",
       "cefr": "B2",
-      "pronunciation": "[ɪˈlɪsɪt]"
+      "pronunciation": "[ɪˈlɪsɪt]",
+      "language": "Eng"
     },
     {
       "term": "mitigate",
       "definition": "Make less severe, serious, or painful.",
       "part_of_speech": "verb",
       "cefr": "C1",
-      "pronunciation": "[ˈmɪtɪɡeɪt]"
+      "pronunciation": "[ˈmɪtɪɡeɪt]",
+      "language": "Eng"
     },
     {
       "term": "novice",
       "definition": "A person new to or inexperienced in a field or situation.",
       "part_of_speech": "noun",
       "cefr": "B1",
-      "pronunciation": "[ˈnɒvɪs]"
+      "pronunciation": "[ˈnɒvɪs]",
+      "language": "Eng"
     },
     {
       "term": "pensive",
       "definition": "Engaged in, reflecting deep or serious thought.",
       "part_of_speech": "adjective",
       "cefr": "C1",
-      "pronunciation": "[ˈpɛnsɪv]"
+      "pronunciation": "[ˈpɛnsɪv]",
+      "language": "Eng"
     },
     {
       "term": "tacit",
       "definition": "Understood or implied without being stated.",
       "part_of_speech": "adjective",
       "cefr": "C1",
-      "pronunciation": "[ˈtæsɪt]"
+      "pronunciation": "[ˈtæsɪt]",
+      "language": "Eng"
     },
     {
       "term": "capricious",
       "definition": "Given to sudden and unaccountable changes of mood or behavior.",
       "part_of_speech": "adjective",
       "cefr": "C2",
-      "pronunciation": "[kəˈprɪʃəs]"
+      "pronunciation": "[kəˈprɪʃəs]",
+      "language": "Eng"
     },
     {
       "term": "concise",
       "definition": "Giving a lot of information clearly and in a few words; brief but comprehensive.",
       "part_of_speech": "adjective",
       "cefr": "B1",
-      "pronunciation": "[kənˈsaɪs]"
+      "pronunciation": "[kənˈsaɪs]",
+      "language": "Eng"
     }
   ],
   "SentenceCreate": [
     {
       "text": "Mobile phones are becoming increasingly ubiquitous in the modern world.",
-      "word_id": 1
+      "word_id": 1,
+      "language": "Eng"
     },
     {
       "text": "The beauty of a sunset is sadly ephemeral.",
-      "word_id": 2
+      "word_id": 2,
+      "language": "Eng"
     },
     {
       "text": "It was pure serendipity that I ran into my old friend at the airport.",
-      "term": "serendipity"
+      "term": "serendipity",
+      "language": "Eng"
     },
     {
       "text": "She has a truly benevolent nature, always helping those in need.",
-      "term": "benevolent"
+      "term": "benevolent",
+      "language": "Eng"
     },
     {
       "text": "The internet has caused a major paradigm shift in how we communicate.",
-      "term": "paradigm"
+      "term": "paradigm",
+      "language": "Eng"
     },
     {
       "text": "He gave a perfunctory nod, clearly not interested in the details.",
-      "term": "perfunctory"
+      "term": "perfunctory",
+      "language": "Eng"
     },
     {
       "text": "After the storm, we were inundated with calls for help.",
-      "term": "inundate"
+      "term": "inundate",
+      "language": "Eng"
     },
     {
       "text": "Her amazing resilience allowed her to bounce back quickly after the loss.",
-      "term": "resilience"
+      "term": "resilience",
+      "language": "Eng"
     },
     {
       "text": "The journalist tried to elicit a response from the politician.",
-      "term": "elicit"
+      "term": "elicit",
+      "language": "Eng"
     },
     {
       "text": "They are hoping to mitigate the impact of the new regulations.",
-      "term": "mitigate"
+      "term": "mitigate",
+      "language": "Eng"
     },
     {
       "text": "As a novice programmer, I have a lot to learn.",
-      "term": "novice"
+      "term": "novice",
+      "language": "Eng"
     },
     {
       "text": "She looked pensive, staring out the window at the rain.",
-      "term": "pensive"
+      "term": "pensive",
+      "language": "Eng"
     },
     {
       "text": "We had a tacit agreement that we wouldn't discuss the past.",
-      "term": "tacit"
+      "term": "tacit",
+      "language": "Eng"
     },
     {
       "text": "His capricious changes of mood made it difficult to work with him.",
-      "term": "capricious"
+      "term": "capricious",
+      "language": "Eng"
     },
     {
       "text": "Please make your report concise and to the point.",
-      "term": "concise"
+      "term": "concise",
+      "language": "Eng"
     }
   ]
 }

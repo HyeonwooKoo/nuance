@@ -21,10 +21,12 @@ def get_word_ids_due_soon(
     user_id: uuid.UUID,
     max_count: int = 20,
     due_in_minutes: int = 15,
+    language: str = "Eng",
 ) -> list[int]:
     return session.exec(
         select(ReviewStat.word_id)
         .where(ReviewStat.user_id == user_id)
+        .where(Word.language == language)
         .where(
             ReviewStat.due
             <= dt.datetime.now(dt.timezone.utc) + dt.timedelta(minutes=due_in_minutes)
@@ -35,10 +37,11 @@ def get_word_ids_due_soon(
 
 
 def get_word_ids_unseen(
-    session: Session, *, user_id: uuid.UUID, max_count: int = 20
+    session: Session, *, user_id: uuid.UUID, max_count: int = 20, language: str = "Eng"
 ) -> list[int]:
     return session.exec(
         select(Word.id)
+        .where(Word.language == language)
         .outerjoin(
             ReviewStat,
             (ReviewStat.word_id == Word.id) & (ReviewStat.user_id == user_id),

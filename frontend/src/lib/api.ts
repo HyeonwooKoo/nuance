@@ -78,21 +78,25 @@ export const getSentences = async (wordIds: number[]): Promise<Sentence[]> => {
   return response.data;
 };
 
-export const getUnseenSentences = async (): Promise<Sentence[]> => {
+export const getUnseenSentences = async (language: string = "Eng"): Promise<Sentence[]> => {
   if (USE_MOCK_API) {
     console.log("mock getUnseenSentences called");
     return [];
   }
-  const response = await api.get<Sentence[]>("/sentences/unseen");
+  const response = await api.get<Sentence[]>("/sentences/unseen", {
+    params: { language },
+  });
   return response.data;
 };
 
-export const getDueSoonWordIds = async (): Promise<number[]> => {
+export const getDueSoonWordIds = async (language: string = "Eng"): Promise<number[]> => {
   if (USE_MOCK_API) {
     console.log("mock getDueSoonWordIds called");
     return [];
   }
-  const response = await api.get<number[]>("/words/due-soon");
+  const response = await api.get<number[]>("/words/due-soon", {
+    params: { language },
+  });
   return response.data;
 };
 
