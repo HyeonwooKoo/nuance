@@ -1,5 +1,6 @@
 import { useGoogleLogin } from "@react-oauth/google";
 import { LogOut } from "lucide-react";
+import { useState } from "react";
 
 import api from "../lib/api";
 import { useAuthStore } from "../store/auth";
@@ -7,6 +8,7 @@ import { Button } from "./ui/button";
 
 export function UserNav() {
   const { user, setUser, logout } = useAuthStore();
+  const [isLoading, setIsLoading] = useState(false);
 
   const login = useGoogleLogin({
     onSuccess: async (codeResponse) => {
@@ -17,7 +19,13 @@ export function UserNav() {
         setUser(data.user, data.token);
       } catch (error) {
         console.error("Login failed:", error);
+      } finally {
+        setIsLoading(false);
       }
+    },
+    onError: (error) => {
+      console.error("Login Failed:", error);
+      setIsLoading(false);
     },
     flow: "auth-code",
   });
@@ -31,7 +39,14 @@ export function UserNav() {
   }
 
   return (
-    <Button variant="ghost" onClick={() => login()}>
+    <Button
+      variant="ghost"
+      onClick={() => {
+        setIsLoading(true);
+        login();
+      }}
+      disabled={isLoading}
+    >
       Sign in
     </Button>
   );
